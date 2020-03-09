@@ -1,0 +1,2204 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3 矢量图层 · GDAL/OGR 中文手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="llc">
+        
+        
+    
+    <link rel="stylesheet" href="style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3 矢量图层.html" />
+    
+    
+    <link rel="prev" href="2 几何.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    0 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html">
+            
+                    
+                    1 一般使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#检测安装">
+            
+                    
+                    检测安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#查看版本">
+            
+                    
+                    查看版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#开启python异常">
+            
+                    
+                    开启python异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#安装gdal-ogr错误处理">
+            
+                    
+                    安装GDAL OGR错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2 几何.html">
+            
+                <a href="2 几何.html">
+            
+                    
+                    2 几何
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建点">
+            
+                    
+                    创建点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建线">
+            
+                    
+                    创建线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多边形">
+            
+                    
+                    创建多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建带洞的多边形">
+            
+                    
+                    创建带洞的多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多部件点">
+            
+                    
+                    创建多部件点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多部件线">
+            
+                    
+                    创建多部件线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多部件多边形">
+            
+                    
+                    创建多部件多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建几何集合">
+            
+                    
+                    创建几何集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从wkt创建几何">
+            
+                    
+                    从WKT创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从geojson创建几何">
+            
+                    
+                    从GeoJSON创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从gml创建几何">
+            
+                    
+                    从GML创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从wkb创建几何">
+            
+                    
+                    从WKB创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算点的个数">
+            
+                    
+                    计算点的个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算几何个数">
+            
+                    
+                    计算几何个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="2 几何.html">
+            
+                <a href="2 几何.html#迭代几何">
+            
+                    
+                    迭代几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="2 几何.html">
+            
+                <a href="2 几何.html#迭代点">
+            
+                    
+                    迭代点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="2 几何.html">
+            
+                <a href="2 几何.html#几何缓冲区">
+            
+                    
+                    几何缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算包围盒">
+            
+                    
+                    计算包围盒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算面积">
+            
+                    
+                    计算面积
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算长度">
+            
+                    
+                    计算长度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="2 几何.html">
+            
+                <a href="2 几何.html#获得几何类型">
+            
+                    
+                    获得几何类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算几何相交">
+            
+                    
+                    计算几何相交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算几何并集">
+            
+                    
+                    计算几何并集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到geojson">
+            
+                    
+                    输出几何到GeoJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到wkt">
+            
+                    
+                    输出几何到WKT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到kml">
+            
+                    
+                    输出几何到KML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到wkb">
+            
+                    
+                    输出几何到WKB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="2 几何.html">
+            
+                <a href="2 几何.html#强制多边形到多部件多边形">
+            
+                    
+                    强制多边形到多部件多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="2 几何.html">
+            
+                <a href="2 几何.html#四等分多边形并创建质心">
+            
+                    
+                    四等分多边形并创建质心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html">
+            
+                    
+                    3 矢量图层
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#删除文件">
+            
+                    
+                    删除文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取ogr驱动列表">
+            
+                    
+                    获取OGR驱动列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#驱动是否可用">
+            
+                    
+                    驱动是否可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取shapefile要素个数">
+            
+                    
+                    获取shapefile要素个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取postgis图层">
+            
+                    
+                    获取PostGIS图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取postgis图层的要素">
+            
+                    
+                    获取PostGIS图层的要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取esri-gdb图层">
+            
+                    
+                    获取ESRI GDB图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#加载数据到内存">
+            
+                    
+                    加载数据到内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#遍历要素">
+            
+                    
+                    遍历要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#遍历要素几何">
+            
+                    
+                    遍历要素几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#过滤属性">
+            
+                    
+                    过滤属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#空间过滤">
+            
+                    
+                    空间过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取要素字段">
+            
+                    
+                    获取要素字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取postgis图层字段">
+            
+                    
+                    获取PostGIS图层字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取图层能力">
+            
+                    
+                    获取图层能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#wfs图层和遍历要素">
+            
+                    
+                    WFS图层和遍历要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#设置http代理">
+            
+                    
+                    设置HTTP代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#读取csv经纬度作为ogrvrtlayer">
+            
+                    
+                    读取CSV经纬度作为OGRVRTLayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#计算范围">
+            
+                    
+                    计算范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#计算凸包">
+            
+                    
+                    计算凸包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#计算质心">
+            
+                    
+                    计算质心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#创建新的shp数据并添加数据">
+            
+                    
+                    创建新的shp数据并添加数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#从wkt创建postgis表">
+            
+                    
+                    从WKT创建PostGIS表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#过滤和选择">
+            
+                    
+                    过滤和选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#合并图层">
+            
+                    
+                    合并图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取osm街道名称">
+            
+                    
+                    获取OSM街道名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#创建鱼网">
+            
+                    
+                    创建鱼网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#面转线">
+            
+                    
+                    面转线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#创建缓冲区">
+            
+                    
+                    创建缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#栅格化矢量图层">
+            
+                    
+                    栅格化矢量图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#面转点">
+            
+                    
+                    面转点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3 矢量图层</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x77E2;&#x91CF;&#x56FE;&#x5C42;">&#x77E2;&#x91CF;&#x56FE;&#x5C42;</h1>
+<h2 id="&#x5220;&#x9664;&#x6587;&#x4EF6;">&#x5220;&#x9664;&#x6587;&#x4EF6;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+DriverName = <span class="hljs-string">&quot;ESRI Shapefile&quot;</span>      <span class="hljs-comment"># e.g.: GeoJSON, ESRI Shapefile</span>
+FileName = <span class="hljs-string">&apos;test.shp&apos;</span>
+driver = ogr.GetDriverByName(DriverName)
+<span class="hljs-keyword">if</span> os.path.exists(FileName):
+     driver.DeleteDataSource(FileName)
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;ogr&#x9A71;&#x52A8;&#x5217;&#x8868;">&#x83B7;&#x53D6;OGR&#x9A71;&#x52A8;&#x5217;&#x8868;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr
+cnt = ogr.GetDriverCount()
+formatsList = []  <span class="hljs-comment"># Empty List</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(cnt):
+    driver = ogr.GetDriver(i)
+    driverName = driver.GetName()
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> driverName <span class="hljs-keyword">in</span> formatsList:
+        formatsList.append(driverName)
+
+formatsList.sort() <span class="hljs-comment"># &#x6392;&#x5E8F;</span>
+
+print(formatsList)
+</code></pre>
+<h2 id="&#x9A71;&#x52A8;&#x662F;&#x5426;&#x53EF;&#x7528;">&#x9A71;&#x52A8;&#x662F;&#x5426;&#x53EF;&#x7528;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+<span class="hljs-comment">## Shapefile &#x662F;&#x5426;&#x53EF;&#x7528;?</span>
+driverName = <span class="hljs-string">&quot;ESRI Shapefile&quot;</span>
+drv = ogr.GetDriverByName( driverName )
+<span class="hljs-keyword">if</span> drv <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+    print(<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x4E0D;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">print</span>  (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+
+<span class="hljs-comment">## PostgreSQL &#x662F;&#x5426;&#x53EF;&#x7528;?</span>
+driverName = <span class="hljs-string">&quot;PostgreSQL&quot;</span>
+drv = ogr.GetDriverByName( driverName )
+<span class="hljs-keyword">if</span> drv <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x4E0D;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">print</span>  (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+
+<span class="hljs-comment">## File GeoDatabase &#x662F;&#x5426;&#x53EF;&#x7528;?</span>
+driverName = <span class="hljs-string">&quot;FileGDB&quot;</span>
+drv = ogr.GetDriverByName( driverName )
+<span class="hljs-keyword">if</span> drv <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x4E0D;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">print</span>  (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+
+<span class="hljs-comment">## SDE &#x662F;&#x5426;&#x53EF;&#x7528;?</span>
+driverName = <span class="hljs-string">&quot;SDE&quot;</span>
+drv = ogr.GetDriverByName( driverName )
+<span class="hljs-keyword">if</span> drv <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x4E0D;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">print</span>  (<span class="hljs-string">&quot;%s &#x9A71;&#x52A8;&#x53EF;&#x7528;.\n&quot;</span> % driverName)
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;shapefile&#x8981;&#x7D20;&#x4E2A;&#x6570;">&#x83B7;&#x53D6;shapefile&#x8981;&#x7D20;&#x4E2A;&#x6570;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+daShapefile = <span class="hljs-string">r&quot;/test.shp&quot;</span>
+
+driver = ogr.GetDriverByName(<span class="hljs-string">&apos;ESRI Shapefile&apos;</span>)
+
+dataSource = driver.Open(daShapefile, <span class="hljs-number">0</span>) <span class="hljs-comment"># 0 &#x53EA;&#x8BFB;. 1 &#x8BFB;&#x5199;.</span>
+
+<span class="hljs-comment"># &#x68C0;&#x67E5;&#x6570;&#x636E;&#x6E90;&#x662F;&#x5426;&#x6709;&#x6548;.</span>
+<span class="hljs-keyword">if</span> dataSource <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;&#x4E0D;&#x80FD;&#x6253;&#x5F00; %s&apos;</span> % (daShapefile))
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;&#x6253;&#x5F00; %s&apos;</span> % (daShapefile))
+    layer = dataSource.GetLayer()
+    featureCount = layer.GetFeatureCount()
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;%s &#x8981;&#x7D20;&#x4E2A;&#x6570;: %d&quot;</span> % (os.path.basename(daShapefile),featureCount))
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;postgis&#x56FE;&#x5C42;">&#x83B7;&#x53D6;PostGIS&#x56FE;&#x5C42;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+databaseServer = <span class="hljs-string">&quot;localhost&quot;</span>
+databaseName = <span class="hljs-string">&quot;test2020&quot;</span>
+databaseUser = <span class="hljs-string">&quot;postgres&quot;</span>
+databasePW = <span class="hljs-string">&quot;123456&quot;</span>
+
+
+connString = <span class="hljs-string">&quot;PG: host=%s dbname=%s user=%s password=%s&quot;</span> %(databaseServer,databaseName,databaseUser,databasePW)
+
+conn = ogr.Open(connString)
+
+layerList = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> conn:
+    daLayer = i.GetName()
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> daLayer <span class="hljs-keyword">in</span> layerList:
+        layerList.append(daLayer)
+
+layerList.sort()
+
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> layerList:
+    print(j)
+
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+conn = <span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;postgis&#x56FE;&#x5C42;&#x7684;&#x8981;&#x7D20;">&#x83B7;&#x53D6;PostGIS&#x56FE;&#x5C42;&#x7684;&#x8981;&#x7D20;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> sys
+
+databaseServer = <span class="hljs-string">&quot;localhost&quot;</span>
+databaseName = <span class="hljs-string">&quot;test2020&quot;</span>
+databaseUser = <span class="hljs-string">&quot;postgres&quot;</span>
+databasePW = <span class="hljs-string">&quot;123456&quot;</span>
+connString = <span class="hljs-string">&quot;PG: host=%s dbname=%s user=%s password=%s&quot;</span> % (databaseServer,databaseName,databaseUser,databasePW)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">GetPGLayer</span><span class="hljs-params">( lyr_name )</span>:</span>
+    conn = ogr.Open(connString)
+
+    lyr = conn.GetLayer( lyr_name )
+    <span class="hljs-keyword">if</span> lyr <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        sys.exit( <span class="hljs-number">1</span> )
+
+    featureCount = lyr.GetFeatureCount()
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;%s &#x8981;&#x7D20;&#x4E2A;&#x6570; : %d&quot;</span> % ( lyr_name , featureCount ))
+
+    <span class="hljs-comment"># &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+    conn = <span class="hljs-keyword">None</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    GetPGLayer( <span class="hljs-string">&quot;test&quot;</span> )
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;esri-gdb&#x56FE;&#x5C42;">&#x83B7;&#x53D6;ESRI GDB&#x56FE;&#x5C42;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+ogr.UseExceptions()
+
+driver = ogr.GetDriverByName(<span class="hljs-string">&quot;OpenFileGDB&quot;</span>)
+
+<span class="hljs-comment"># opening the FileGDB</span>
+<span class="hljs-keyword">try</span>:
+    gdb = driver.Open(<span class="hljs-string">&quot;/sparse.gdb&quot;</span>, <span class="hljs-number">0</span>)
+<span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+    print(e)
+    sys.exit()
+
+featsClassList = []
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x56FE;&#x5C42;</span>
+<span class="hljs-keyword">for</span> featsClass_idx <span class="hljs-keyword">in</span> range(gdb.GetLayerCount()):
+    featsClass = gdb.GetLayerByIndex(featsClass_idx)
+    featsClassList.append(featsClass.GetName())
+
+featsClassList.sort()
+
+<span class="hljs-keyword">for</span> featsClass <span class="hljs-keyword">in</span> featsClassList:
+    <span class="hljs-keyword">print</span> (featsClass)
+</code></pre>
+<h2 id="&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5230;&#x5185;&#x5B58;">&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5230;&#x5185;&#x5B58;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x8F93;&#x5165;&#x6570;&#x636E;&#x6E90;</span>
+indriver=ogr.GetDriverByName(<span class="hljs-string">&apos;SQLite&apos;</span>)
+srcdb = indriver.Open(<span class="hljs-string">&apos;/poly_spatialite.sqlite&apos;</span>,<span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x5185;&#x5B58;&#x8F93;&#x51FA;&#x6570;&#x636E;&#x6E90;</span>
+outdriver=ogr.GetDriverByName(<span class="hljs-string">&apos;MEMORY&apos;</span>)
+source=outdriver.CreateDataSource(<span class="hljs-string">&apos;memData&apos;</span>)
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x5185;&#x5B58;&#x6570;&#x636E;</span>
+tmp=outdriver.Open(<span class="hljs-string">&apos;memData&apos;</span>,<span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># &#x590D;&#x5236;&#x56FE;&#x5C42;&#x5230;&#x5185;&#x5B58;</span>
+poly_mem=source.CopyLayer(srcdb.GetLayer(<span class="hljs-string">&apos;poly&apos;</span>),<span class="hljs-string">&apos;poly&apos;</span>,[<span class="hljs-string">&apos;OVERWRITE=YES&apos;</span>])
+
+<span class="hljs-comment"># &#x65B0;&#x7684;&#x56FE;&#x5C42;&#x53EF;&#x76F4;&#x63A5;&#x88AB;&#x8BBF;&#x95EE;&#xFF0C;poly_mem &#x6216;&#x8005; source.GetLayer(&apos;poly&apos;):</span>
+layer=source.GetLayer(<span class="hljs-string">&apos;poly&apos;</span>)
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> layer:
+    feature.SetField(<span class="hljs-string">&apos;area&apos;</span>,<span class="hljs-number">1</span>)
+</code></pre>
+<h2 id="&#x904D;&#x5386;&#x8981;&#x7D20;">&#x904D;&#x5386;&#x8981;&#x7D20;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+shapefile = <span class="hljs-string">&quot;/test.shp&quot;</span>
+driver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+dataSource = driver.Open(shapefile, <span class="hljs-number">0</span>)
+layer = dataSource.GetLayer()
+
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> layer:
+    print( feature.GetField(<span class="hljs-string">&quot;area&quot;</span>))
+layer.ResetReading()
+</code></pre>
+<h2 id="&#x904D;&#x5386;&#x8981;&#x7D20;&#x51E0;&#x4F55;">&#x904D;&#x5386;&#x8981;&#x7D20;&#x51E0;&#x4F55;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+shapefile = <span class="hljs-string">&quot;/test.shp&quot;</span>
+driver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+dataSource = driver.Open(shapefile, <span class="hljs-number">0</span>)
+layer = dataSource.GetLayer()
+
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> layer:
+    geom = feature.GetGeometryRef()
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x8D28;&#x5FC3;</span>
+    <span class="hljs-keyword">print</span> (geom.Centroid().ExportToWkt())
+</code></pre>
+<h2 id="&#x8FC7;&#x6EE4;&#x5C5E;&#x6027;">&#x8FC7;&#x6EE4;&#x5C5E;&#x6027;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+shapefile = <span class="hljs-string">&quot;/test.shp&quot;</span>
+driver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+dataSource = driver.Open(shapefile, <span class="hljs-number">0</span>)
+layer = dataSource.GetLayer()
+
+layer.SetAttributeFilter(<span class="hljs-string">&quot;area = 5268.813&quot;</span>)
+
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> layer:
+    <span class="hljs-keyword">print</span> (feature.GetField(<span class="hljs-string">&quot;area&quot;</span>))
+</code></pre>
+<h2 id="&#x7A7A;&#x95F4;&#x8FC7;&#x6EE4;">&#x7A7A;&#x95F4;&#x8FC7;&#x6EE4;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+shapefile = <span class="hljs-string">&quot;/test.shp&quot;</span>
+driver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+dataSource = driver.Open(shapefile, <span class="hljs-number">0</span>)
+layer = dataSource.GetLayer()
+
+wkt = <span class="hljs-string">&quot;POLYGON ((479386 4764749,481098 4764226,480772 4763114,478681 4763159,479386 4764749))&quot;</span>
+layer.SetSpatialFilter(ogr.CreateGeometryFromWkt(wkt))
+
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> layer:
+    <span class="hljs-keyword">print</span> (feature.GetField(<span class="hljs-string">&quot;area&quot;</span>))
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;&#x8981;&#x7D20;&#x5B57;&#x6BB5;">&#x83B7;&#x53D6;&#x8981;&#x7D20;&#x5B57;&#x6BB5;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+daShapefile = <span class="hljs-string">r&quot;/test.shp&quot;</span>
+
+dataSource = ogr.Open(daShapefile)
+daLayer = dataSource.GetLayer(<span class="hljs-number">0</span>)
+layerDefinition = daLayer.GetLayerDefn()
+
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(layerDefinition.GetFieldCount()):
+    fieldName =  layerDefinition.GetFieldDefn(i).GetName()
+    fieldTypeCode = layerDefinition.GetFieldDefn(i).GetType()
+    fieldType = layerDefinition.GetFieldDefn(i).GetFieldTypeName(fieldTypeCode)
+    fieldWidth = layerDefinition.GetFieldDefn(i).GetWidth()
+    GetPrecision = layerDefinition.GetFieldDefn(i).GetPrecision()
+
+    <span class="hljs-keyword">print</span> (fieldName + <span class="hljs-string">&quot; - &quot;</span> + fieldType+ <span class="hljs-string">&quot; &quot;</span> + str(fieldWidth) + <span class="hljs-string">&quot; &quot;</span> + str(GetPrecision))
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;postgis&#x56FE;&#x5C42;&#x5B57;&#x6BB5;">&#x83B7;&#x53D6;PostGIS&#x56FE;&#x5C42;&#x5B57;&#x6BB5;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> sys
+
+databaseServer = <span class="hljs-string">&quot;localhost&quot;</span>
+databaseName = <span class="hljs-string">&quot;test2020&quot;</span>
+databaseUser = <span class="hljs-string">&quot;postgres&quot;</span>
+databasePW = <span class="hljs-string">&quot;123456&quot;</span>
+connString = <span class="hljs-string">&quot;PG: host=%s dbname=%s user=%s password=%s&quot;</span> %(databaseServer,databaseName,databaseUser,databasePW)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">GetPGLayerFields</span><span class="hljs-params">( lyr_name )</span>:</span>
+    conn = ogr.Open(connString)
+
+    lyr = conn.GetLayer( lyr_name )
+    <span class="hljs-keyword">if</span> lyr <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        sys.exit( <span class="hljs-number">1</span> )
+
+    lyrDefn = lyr.GetLayerDefn()
+
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( lyrDefn.GetFieldCount() ):
+        fieldName =  lyrDefn.GetFieldDefn(i).GetName()
+        fieldTypeCode = lyrDefn.GetFieldDefn(i).GetType()
+        fieldType = lyrDefn.GetFieldDefn(i).GetFieldTypeName(fieldTypeCode)
+        fieldWidth = lyrDefn.GetFieldDefn(i).GetWidth()
+        GetPrecision = lyrDefn.GetFieldDefn(i).GetPrecision()
+
+        <span class="hljs-keyword">print</span> (fieldName + <span class="hljs-string">&quot; - &quot;</span> + fieldType+ <span class="hljs-string">&quot; &quot;</span> + str(fieldWidth) + <span class="hljs-string">&quot; &quot;</span> + str(GetPrecision))
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    GetPGLayerFields( <span class="hljs-string">&quot;test&quot;</span> )
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;&#x56FE;&#x5C42;&#x80FD;&#x529B;">&#x83B7;&#x53D6;&#x56FE;&#x5C42;&#x80FD;&#x529B;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+
+ds = ogr.Open(<span class="hljs-string">&quot;/test.shp&quot;</span>,<span class="hljs-number">0</span>)
+layer = ds.GetLayer()
+capabilities = [
+    ogr.OLCRandomRead,
+    ogr.OLCSequentialWrite,
+    ogr.OLCRandomWrite,
+    ogr.OLCFastSpatialFilter,
+    ogr.OLCFastFeatureCount,
+    ogr.OLCFastGetExtent,
+    ogr.OLCCreateField,
+    ogr.OLCDeleteField,
+    ogr.OLCReorderFields,
+    ogr.OLCAlterFieldDefn,
+    ogr.OLCTransactions,
+    ogr.OLCDeleteFeature,
+    ogr.OLCFastSetNextByIndex,
+    ogr.OLCStringsAsUTF8,
+    ogr.OLCIgnoreFields
+]
+
+print(<span class="hljs-string">&quot;&#x56FE;&#x5C42;&#x80FD;&#x529B;:&quot;</span>)
+<span class="hljs-keyword">for</span> cap <span class="hljs-keyword">in</span> capabilities:
+    print(<span class="hljs-string">&quot;  %s = %s&quot;</span> % (cap, layer.TestCapability(cap)))
+</code></pre>
+<h2 id="wfs&#x56FE;&#x5C42;&#x548C;&#x904D;&#x5386;&#x8981;&#x7D20;">WFS&#x56FE;&#x5C42;&#x548C;&#x904D;&#x5386;&#x8981;&#x7D20;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> sys
+
+<span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr, osr, gdal
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;WFS&#x9A71;&#x52A8;</span>
+wfs_drv = ogr.GetDriverByName(<span class="hljs-string">&apos;WFS&apos;</span>)
+
+<span class="hljs-comment"># &#x52A0;&#x5FEB;&#x67E5;&#x8BE2;&#x591A;&#x56FE;&#x5C42;WFS&#x670D;&#x52A1;</span>
+gdal.SetConfigOption(<span class="hljs-string">&apos;OGR_WFS_LOAD_MULTIPLE_LAYER_DEFN&apos;</span>, <span class="hljs-string">&apos;NO&apos;</span>)
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5206;&#x9875;&#x7684;&#x914D;&#x7F6E;&#x3002;&#x9002;&#x7528;&#x4E8E;WFS 2.0&#x670D;&#x52A1;&#x4EE5;&#x53CA;WFS 1.0&#x548C;1.1&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x670D;&#x52A1;&#x3002;</span>
+gdal.SetConfigOption(<span class="hljs-string">&apos;OGR_WFS_PAGING_ALLOWED&apos;</span>, <span class="hljs-string">&apos;YES&apos;</span>)
+gdal.SetConfigOption(<span class="hljs-string">&apos;OGR_WFS_PAGE_SIZE&apos;</span>, <span class="hljs-string">&apos;10000&apos;</span>)
+
+url = <span class="hljs-string">&apos;http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer&apos;</span>
+wfs_ds = wfs_drv.Open(<span class="hljs-string">&apos;WFS:&apos;</span> + url)
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> wfs_ds:
+    sys.exit(<span class="hljs-string">&apos;&#x9519;&#x8BEF;: &#x4E0D;&#x80FD;&#x6253;&#x5F00; WFS &#x6570;&#x636E;&#x6E90;&apos;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># &#x904D;&#x5386;&#x56FE;&#x5C42;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(wfs_ds.GetLayerCount()):
+    layer = wfs_ds.GetLayerByIndex(i)
+    srs = layer.GetSpatialRef()
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;Layer: %s, Features: %s, SR: %s...&apos;</span> % (layer.GetName(), layer.GetFeatureCount(), srs.ExportToWkt()[<span class="hljs-number">0</span>:<span class="hljs-number">50</span>]))
+
+    <span class="hljs-comment"># &#x904D;&#x5386;&#x8981;&#x7D20;</span>
+    feat = layer.GetNextFeature()
+    <span class="hljs-keyword">while</span> feat <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        feat = layer.GetNextFeature()
+        <span class="hljs-comment"># do something more..</span>
+    feat = <span class="hljs-keyword">None</span>
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x56FE;&#x5C42;</span>
+layer = wfs_ds.GetLayerByName(<span class="hljs-string">&quot;esri:World&quot;</span>)
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> layer:
+    sys.exit(<span class="hljs-string">&apos;&#x9519;&#x8BEF;&#xFF1A;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x56FE;&#x5C42;&#xFF1A;esri:World&apos;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<h2 id="&#x8BBE;&#x7F6E;http&#x4EE3;&#x7406;">&#x8BBE;&#x7F6E;HTTP&#x4EE3;&#x7406;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> sys
+
+<span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr, osr, gdal
+
+server = <span class="hljs-string">&apos;proxy.example.com&apos;</span>
+port = <span class="hljs-number">3128</span>
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x4EE3;&#x7406;</span>
+gdal.SetConfigOption(<span class="hljs-string">&apos;GDAL_HTTP_PROXY&apos;</span>, server + <span class="hljs-string">&apos;:&apos;</span> + port)
+
+<span class="hljs-comment"># &#x6CA1;&#x6709;&#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x7684;NTLM&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x9009;&#x9879;&#xFF0C;&#x56E0;&#x6B64;&#x5355;&#x70B9;&#x767B;&#x5F55;&#x6709;&#x6548;</span>
+gdal.SetConfigOption(<span class="hljs-string">&apos;GDAL_PROXY_AUTH&apos;</span>, <span class="hljs-string">&apos;NTLM&apos;</span>)
+gdal.SetConfigOption(<span class="hljs-string">&apos;GDAL_HTTP_PROXYUSERPWD&apos;</span>, <span class="hljs-string">&apos; : &apos;</span>)
+
+ds = ogr.Open(<span class="hljs-string">&apos;http://featureserver/cities/.geojson&apos;</span>)
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ds:
+    sys.exit(<span class="hljs-string">&apos;ERROR: can not open GeoJSON datasource&apos;</span>)
+lyr = ds.GetLayer(<span class="hljs-string">&apos;OGRGeoJSON&apos;</span>)
+<span class="hljs-keyword">for</span> feat <span class="hljs-keyword">in</span> lyr:
+    geom = feat.GetGeometryRef()
+    print( geom.ExportToWkt())
+</code></pre>
+<h2 id="&#x8BFB;&#x53D6;csv&#x7ECF;&#x7EAC;&#x5EA6;&#x4F5C;&#x4E3A;ogrvrtlayer">&#x8BFB;&#x53D6;CSV&#x7ECF;&#x7EAC;&#x5EA6;&#x4F5C;&#x4E3A;OGRVRTLayer</h2>
+<p>GDAL/OGR&#x5177;&#x6709;<a href="https://gdal.org/drivers/vector/vrt.html" target="_blank">&#x865A;&#x62DF;&#x683C;&#x5F0F;&#x89C4;&#x8303;</a>&#xFF0C;&#x8BE5;&#x89C4;&#x8303;&#x5141;&#x8BB8;&#x4F60;&#x4ECE;&#x8BF8;&#x5982;CSV&#x4E4B;&#x7C7B;&#x7684;&#x5E73;&#x9762;&#x8868;&#x6D3E;&#x751F;&#x56FE;&#x5C42;&#x2014;&#x2014;&#x5B83;&#x7684;&#x529F;&#x80FD;&#x8FDC;&#x4E0D;&#x6B62;&#x4E8E;&#x6B64;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x7EE7;&#x7EED;&#x9605;&#x8BFB;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x8BFB;&#x53D6;&#x5E26;&#x6709;X&#x3001;Y&#x5217;&#x548C;&#x503C;&#x7684;CSV&#x3002;&#x8BE5;CSV&#x6587;&#x4EF6;&#x7531;XML&#x6587;&#x4EF6;&#x5305;&#x88C5;&#xFF0C;&#x8BE5;XML&#x6587;&#x4EF6;&#x5C06;&#x5176;&#x63CF;&#x8FF0;&#x4E3A;OGR&#x5C42;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x6240;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x90E8;&#x5206;&#x548C;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#xFF0C;&#x8BE5;&#x811A;&#x672C;&#x8BFB;&#x53D6;XML&#x6587;&#x4EF6;&#x5E76;&#x6253;&#x5370;&#x51FA;&#x70B9;&#x7684;&#x51E0;&#x4F55;&#x5F62;&#x72B6;&#x3002;</p>
+<p>CSV&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>ID,X,Y
+1,-127.234343,47.234325
+2,-127.003243,46.234343
+3,-127.345646,45.234324
+4,-126.234324,44.324234
+</code></pre><p>XML&#x6587;&#x4EF6;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">OGRVRTDataSource</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">OGRVRTLayer</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SrcDataSource</span>&gt;</span>example.csv<span class="hljs-tag">&lt;/<span class="hljs-name">SrcDataSource</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">SrcLayer</span>&gt;</span>example<span class="hljs-tag">&lt;/<span class="hljs-name">SrcLayer</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">GeometryType</span>&gt;</span>wkbPoint<span class="hljs-tag">&lt;/<span class="hljs-name">GeometryType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">LayerSRS</span>&gt;</span>WGS84<span class="hljs-tag">&lt;/<span class="hljs-name">LayerSRS</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">GeometryField</span> <span class="hljs-attr">encoding</span>=<span class="hljs-string">&quot;PointFromColumns&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;X&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;Y&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">OGRVRTLayer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OGRVRTDataSource</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+ogr.UseExceptions()
+
+inDataSource = ogr.Open(<span class="hljs-string">&quot;example_wrapper.vrt&quot;</span>)
+lyr = inDataSource.GetLayer(<span class="hljs-string">&apos;example&apos;</span>)
+<span class="hljs-keyword">for</span> feat <span class="hljs-keyword">in</span> lyr:
+    geom = feat.GetGeometryRef()
+    <span class="hljs-keyword">print</span> (geom.ExportToWkt())
+</code></pre>
+<h2 id="&#x8BA1;&#x7B97;&#x8303;&#x56F4;">&#x8BA1;&#x7B97;&#x8303;&#x56F4;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+<span class="hljs-comment"># Get a Layer&apos;s Extent</span>
+inShapefile = <span class="hljs-string">&quot;states.shp&quot;</span>
+inDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+inDataSource = inDriver.Open(inShapefile, <span class="hljs-number">0</span>)
+inLayer = inDataSource.GetLayer()
+extent = inLayer.GetExtent()
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x591A;&#x8FB9;&#x5F62;</span>
+ring = ogr.Geometry(ogr.wkbLinearRing)
+ring.AddPoint(extent[<span class="hljs-number">0</span>],extent[<span class="hljs-number">2</span>])
+ring.AddPoint(extent[<span class="hljs-number">1</span>], extent[<span class="hljs-number">2</span>])
+ring.AddPoint(extent[<span class="hljs-number">1</span>], extent[<span class="hljs-number">3</span>])
+ring.AddPoint(extent[<span class="hljs-number">0</span>], extent[<span class="hljs-number">3</span>])
+ring.AddPoint(extent[<span class="hljs-number">0</span>],extent[<span class="hljs-number">2</span>])
+poly = ogr.Geometry(ogr.wkbPolygon)
+poly.AddGeometry(ring)
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5230;&#x65B0;&#x7684;shp&#x6587;&#x4EF6;</span>
+outShapefile = <span class="hljs-string">&quot;new.shp&quot;</span>
+outDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+
+<span class="hljs-comment"># &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5148;&#x5220;&#x9664;</span>
+<span class="hljs-keyword">if</span> os.path.exists(outShapefile):
+    outDriver.DeleteDataSource(outShapefile)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x6570;&#x636E;&#x6E90;</span>
+outDataSource = outDriver.CreateDataSource(outShapefile)
+outLayer = outDataSource.CreateLayer(<span class="hljs-string">&quot;new&quot;</span>, geom_type=ogr.wkbPolygon)
+
+<span class="hljs-comment"># &#x6DFB;&#x52A0;ID&#x5B57;&#x6BB5;</span>
+idField = ogr.FieldDefn(<span class="hljs-string">&quot;id&quot;</span>, ogr.OFTInteger)
+outLayer.CreateField(idField)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x8981;&#x7D20;</span>
+featureDefn = outLayer.GetLayerDefn()
+feature = ogr.Feature(featureDefn)
+feature.SetGeometry(poly)
+feature.SetField(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">1</span>)
+outLayer.CreateFeature(feature)
+feature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5E76;&#x5173;&#x95ED;</span>
+inDataSource = <span class="hljs-keyword">None</span>
+outDataSource = <span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x8BA1;&#x7B97;&#x51F8;&#x5305;">&#x8BA1;&#x7B97;&#x51F8;&#x5305;</h2>
+<p><a href="assets/image-20200309152509219.png" data-lightbox="d306f1f9-d4b3-4f14-b010-f14954af8d1b" data-title="image-20200309152509219"><img src="assets/image-20200309152509219.png" alt="image-20200309152509219"></a></p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+<span class="hljs-comment"># &#x83B7;&#x5F97;&#x56FE;&#x5C42;</span>
+inShapefile = <span class="hljs-string">&quot;test.shp&quot;</span>
+inDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+inDataSource = inDriver.Open(inShapefile, <span class="hljs-number">0</span>)
+inLayer = inDataSource.GetLayer()
+
+<span class="hljs-comment"># &#x51E0;&#x4F55;&#x96C6;&#x5408;</span>
+geomcol = ogr.Geometry(ogr.wkbGeometryCollection)
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> inLayer:
+    geomcol.AddGeometry(feature.GetGeometryRef())
+
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x51F8;&#x5305;</span>
+convexhull = geomcol.ConvexHull()
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;</span>
+outShapefile = <span class="hljs-string">&quot;test_convexhull.shp&quot;</span>
+outDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+
+<span class="hljs-comment"># &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5148;&#x5220;&#x9664;</span>
+<span class="hljs-keyword">if</span> os.path.exists(outShapefile):
+    outDriver.DeleteDataSource(outShapefile)
+
+<span class="hljs-comment"># &#x8F93;&#x51FA;</span>
+outDataSource = outDriver.CreateDataSource(outShapefile)
+outLayer = outDataSource.CreateLayer(<span class="hljs-string">&quot;test_convexhull&quot;</span>, geom_type=ogr.wkbPolygon)
+
+<span class="hljs-comment"># &#x6DFB;&#x52A0;ID&#x5B57;&#x6BB5;</span>
+idField = ogr.FieldDefn(<span class="hljs-string">&quot;id&quot;</span>, ogr.OFTInteger)
+outLayer.CreateField(idField)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x8981;&#x7D20;</span>
+featureDefn = outLayer.GetLayerDefn()
+feature = ogr.Feature(featureDefn)
+feature.SetGeometry(convexhull)
+feature.SetField(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">1</span>)
+outLayer.CreateFeature(feature)
+feature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5E76;&#x5173;&#x95ED;</span>
+inDataSource = <span class="hljs-keyword">None</span>
+outDataSource = <span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x8BA1;&#x7B97;&#x8D28;&#x5FC3;">&#x8BA1;&#x7B97;&#x8D28;&#x5FC3;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os
+
+ogr.UseExceptions()
+
+<span class="hljs-comment"># &#x8F93;&#x5165;&#x56FE;&#x5C42;</span>
+inShapefile = <span class="hljs-string">&quot;test.shp&quot;</span>
+inDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+inDataSource = inDriver.Open(inShapefile, <span class="hljs-number">0</span>)
+inLayer = inDataSource.GetLayer()
+
+<span class="hljs-comment"># &#x8F93;&#x51FA;&#x56FE;&#x5C42;</span>
+outShapefile = <span class="hljs-string">&quot;test_centroids.shp&quot;</span>
+outDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+
+<span class="hljs-comment"># &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5148;&#x5220;&#x9664;</span>
+<span class="hljs-keyword">if</span> os.path.exists(outShapefile):
+    outDriver.DeleteDataSource(outShapefile)
+
+outDataSource = outDriver.CreateDataSource(outShapefile)
+outLayer = outDataSource.CreateLayer(<span class="hljs-string">&quot;test_centroids&quot;</span>, geom_type=ogr.wkbPoint)
+
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5B57;&#x6BB5;</span>
+inLayerDefn = inLayer.GetLayerDefn()
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, inLayerDefn.GetFieldCount()):
+    fieldDefn = inLayerDefn.GetFieldDefn(i)
+    outLayer.CreateField(fieldDefn)
+
+<span class="hljs-comment"># &#x83B7;&#x5F97;&#x8981;&#x7D20;&#x5B9A;&#x4E49;</span>
+outLayerDefn = outLayer.GetLayerDefn()
+
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x8981;&#x7D20;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, inLayer.GetFeatureCount()):
+    <span class="hljs-comment"># &#x8F93;&#x5165;&#x8981;&#x7D20;</span>
+    inFeature = inLayer.GetFeature(i)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;&#x8981;&#x7D20;</span>
+    outFeature = ogr.Feature(outLayerDefn)
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5B57;&#x6BB5;&#x503C;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, outLayerDefn.GetFieldCount()):
+        outFeature.SetField(outLayerDefn.GetFieldDefn(i).GetNameRef(), inFeature.GetField(i))
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8D28;&#x5FC3;&#x51E0;&#x4F55;</span>
+    geom = inFeature.GetGeometryRef()
+    inFeature = <span class="hljs-keyword">None</span>
+    centroid = geom.Centroid()
+    outFeature.SetGeometry(centroid)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x65B0;&#x8981;&#x7D20;</span>
+    outLayer.CreateFeature(outFeature)
+    outFeature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5E76;&#x5173;&#x95ED;</span>
+inDataSource = <span class="hljs-keyword">None</span>
+outDataSource = <span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;&#x65B0;&#x7684;shp&#x6570;&#x636E;&#x5E76;&#x6DFB;&#x52A0;&#x6570;&#x636E;">&#x521B;&#x5EFA;&#x65B0;&#x7684;shp&#x6570;&#x636E;&#x5E76;&#x6DFB;&#x52A0;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> osgeo.ogr <span class="hljs-keyword">as</span> ogr
+<span class="hljs-keyword">import</span> osgeo.osr <span class="hljs-keyword">as</span> osr
+<span class="hljs-keyword">import</span> csv,os
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x5B57;&#x5178;&#x8BFB;&#x53D6;&#x6570;&#x636E;</span>
+reader = csv.DictReader(open(<span class="hljs-string">&quot;volcano_data.txt&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>),
+    delimiter=<span class="hljs-string">&apos;\t&apos;</span>,
+    quoting=csv.QUOTE_NONE)
+
+<span class="hljs-comment"># &#x9A71;&#x52A8;</span>
+outShapefile=<span class="hljs-string">&quot;volcanoes.shp&quot;</span>
+driver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+
+<span class="hljs-keyword">if</span> os.path.exists(outShapefile):
+    driver.DeleteDataSource(outShapefile)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x6570;&#x636E;&#x6E90;</span>
+data_source = driver.CreateDataSource(outShapefile)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x7A7A;&#x95F4;&#x53C2;&#x8003; WGS84</span>
+srs = osr.SpatialReference()
+srs.ImportFromEPSG(<span class="hljs-number">4326</span>)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x56FE;&#x5C42;</span>
+layer = data_source.CreateLayer(<span class="hljs-string">&quot;volcanoes&quot;</span>, srs, ogr.wkbPoint)
+
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5B57;&#x6BB5;</span>
+field_name = ogr.FieldDefn(<span class="hljs-string">&quot;Name&quot;</span>, ogr.OFTString)
+field_name.SetWidth(<span class="hljs-number">24</span>)
+layer.CreateField(field_name)
+field_region = ogr.FieldDefn(<span class="hljs-string">&quot;Region&quot;</span>, ogr.OFTString)
+field_region.SetWidth(<span class="hljs-number">24</span>)
+layer.CreateField(field_region)
+layer.CreateField(ogr.FieldDefn(<span class="hljs-string">&quot;Latitude&quot;</span>, ogr.OFTReal))
+layer.CreateField(ogr.FieldDefn(<span class="hljs-string">&quot;Longitude&quot;</span>, ogr.OFTReal))
+layer.CreateField(ogr.FieldDefn(<span class="hljs-string">&quot;Elevation&quot;</span>, ogr.OFTInteger))
+
+<span class="hljs-comment"># &#x5904;&#x7406;&#x6587;&#x672C;</span>
+<span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> reader:
+  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8981;&#x7D20;</span>
+  feature = ogr.Feature(layer.GetLayerDefn())
+  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x5B57;&#x6BB5;</span>
+  feature.SetField(<span class="hljs-string">&quot;Name&quot;</span>, row[<span class="hljs-string">&apos;Name&apos;</span>])
+  feature.SetField(<span class="hljs-string">&quot;Region&quot;</span>, row[<span class="hljs-string">&apos;Region&apos;</span>])
+  feature.SetField(<span class="hljs-string">&quot;Latitude&quot;</span>, row[<span class="hljs-string">&apos;Latitude&apos;</span>])
+  feature.SetField(<span class="hljs-string">&quot;Longitude&quot;</span>, row[<span class="hljs-string">&apos;Longitude&apos;</span>])
+  feature.SetField(<span class="hljs-string">&quot;Elevation&quot;</span>, row[<span class="hljs-string">&apos;Elevation&apos;</span>])
+
+  <span class="hljs-comment"># &#x521B;&#x5EFA;WKT</span>
+  wkt = <span class="hljs-string">&quot;POINT(%f %f)&quot;</span> %  (float(row[<span class="hljs-string">&apos;Longitude&apos;</span>]) , float(row[<span class="hljs-string">&apos;Latitude&apos;</span>]))
+
+  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x70B9;</span>
+  point = ogr.CreateGeometryFromWkt(wkt)
+
+  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x51E0;&#x4F55;</span>
+  feature.SetGeometry(point)
+  <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x8981;&#x7D20;</span>
+  layer.CreateFeature(feature)
+  <span class="hljs-comment"># &#x5220;&#x9664;&#x5F15;&#x7528;</span>
+  feature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5173;&#x95ED;</span>
+data_source = <span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x4ECE;wkt&#x521B;&#x5EFA;postgis&#x8868;">&#x4ECE;WKT&#x521B;&#x5EFA;PostGIS&#x8868;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr, osr
+
+database = <span class="hljs-string">&apos;test2020&apos;</span>
+usr = <span class="hljs-string">&apos;postgres&apos;</span>
+pw = <span class="hljs-string">&apos;123456&apos;</span>
+table = <span class="hljs-string">&apos;testtest&apos;</span>
+
+wkt = <span class="hljs-string">&quot;POINT (1120351.5712494177 741921.4223245403)&quot;</span>
+point = ogr.CreateGeometryFromWkt(wkt)
+
+connectionString = <span class="hljs-string">&quot;PG:dbname=&apos;%s&apos; user=&apos;%s&apos; password=&apos;%s&apos;&quot;</span> % (database,usr,pw)
+ogrds = ogr.Open(connectionString)
+
+srs = osr.SpatialReference()
+srs.ImportFromEPSG(<span class="hljs-number">4326</span>)
+
+layer = ogrds.CreateLayer(table, srs, ogr.wkbPoint, [<span class="hljs-string">&apos;OVERWRITE=YES&apos;</span>] )
+
+layerDefn = layer.GetLayerDefn()
+
+feature = ogr.Feature(layerDefn)
+feature.SetGeometry(point)
+
+layer.StartTransaction()
+layer.CreateFeature(feature)
+feature = <span class="hljs-keyword">None</span>
+layer.CommitTransaction()
+</code></pre>
+<h2 id="&#x8FC7;&#x6EE4;&#x548C;&#x9009;&#x62E9;">&#x8FC7;&#x6EE4;&#x548C;&#x9009;&#x62E9;</h2>
+<pre><code class="lang-sh">ogr2ogr <span class="hljs-_">-f</span> <span class="hljs-string">&quot;ESRI Shapefile&quot;</span> junkmob.shp -select area -where <span class="hljs-string">&quot;area = 5268.813&quot;</span> test.shp
+
+<span class="hljs-comment"># &#x8BE5;&#x547D;&#x4EE4;&#x8BFB;&#x53D6;parcel_address.shp&#x5E76;&#x751F;&#x6210;junkmob.shp&#xFF0C;area=5268.813&#x8F93;&#x51FA;area&#x5217;</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">import</span> os, sys
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">( field_name_target )</span>:</span>
+    <span class="hljs-comment"># &#x8F93;&#x5165;&#x56FE;&#x5C42;</span>
+    inShapefile = <span class="hljs-string">&quot;test.shp&quot;</span>
+    inDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+    inDataSource = inDriver.Open(inShapefile, <span class="hljs-number">0</span>)
+    inLayer = inDataSource.GetLayer()
+    inLayer.SetAttributeFilter(<span class="hljs-string">&quot;area = 5268.813&quot;</span>)
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8F93;&#x51FA;&#x56FE;&#x5C42;</span>
+    outShapefile = os.path.join( os.path.split( inShapefile )[<span class="hljs-number">0</span>], <span class="hljs-string">&quot;junkmob.shp&quot;</span> )
+    outDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+
+    <span class="hljs-comment"># &#x5B58;&#x5728;&#xFF0C;&#x5148;&#x5220;&#x9664;</span>
+    <span class="hljs-keyword">if</span> os.path.exists(outShapefile):
+        outDriver.DeleteDataSource(outShapefile)
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8F93;&#x51FA;shp</span>
+    outDataSource = outDriver.CreateDataSource(outShapefile)
+    out_lyr_name = os.path.splitext( os.path.split( outShapefile )[<span class="hljs-number">1</span>] )[<span class="hljs-number">0</span>]
+    outLayer = outDataSource.CreateLayer( out_lyr_name, geom_type=ogr.wkbMultiPolygon )
+
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5B57;&#x6BB5;</span>
+    inLayerDefn = inLayer.GetLayerDefn()
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, inLayerDefn.GetFieldCount()):
+        fieldDefn = inLayerDefn.GetFieldDefn(i)
+        fieldName = fieldDefn.GetName()
+        <span class="hljs-keyword">if</span> fieldName <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> field_name_target:
+            <span class="hljs-keyword">continue</span>
+        outLayer.CreateField(fieldDefn)
+
+    <span class="hljs-comment"># &#x8981;&#x7D20;&#x5B9A;&#x4E49;</span>
+    outLayerDefn = outLayer.GetLayerDefn()
+
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x8981;&#x7D20;</span>
+    <span class="hljs-keyword">for</span> inFeature <span class="hljs-keyword">in</span> inLayer:
+        <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8981;&#x7D20;</span>
+        outFeature = ogr.Feature(outLayerDefn)
+
+        <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5B57;&#x6BB5;</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, outLayerDefn.GetFieldCount()):
+            fieldDefn = outLayerDefn.GetFieldDefn(i)
+            fieldName = fieldDefn.GetName()
+            <span class="hljs-keyword">if</span> fieldName <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> field_name_target:
+                <span class="hljs-keyword">continue</span>
+
+            outFeature.SetField(outLayerDefn.GetFieldDefn(i).GetNameRef(),
+                inFeature.GetField(i))
+
+        <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x51E0;&#x4F55;</span>
+        geom = inFeature.GetGeometryRef()
+        outFeature.SetGeometry(geom.Clone())
+        <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8981;&#x7D20;</span>
+        outLayer.CreateFeature(outFeature)
+        outFeature = <span class="hljs-keyword">None</span>
+
+    <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x5173;&#x95ED;</span>
+    inDataSource = <span class="hljs-keyword">None</span>
+    outDataSource = <span class="hljs-keyword">None</span>
+
+
+main( [<span class="hljs-string">&quot;AREA&quot;</span>,<span class="hljs-string">&quot;EAS_ID&quot;</span>])
+</code></pre>
+<h2 id="&#x5408;&#x5E76;&#x56FE;&#x5C42;">&#x5408;&#x5E76;&#x56FE;&#x5C42;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os, ogr, osr
+
+outputMergefn = <span class="hljs-string">&apos;merge.shp&apos;</span>
+directory = <span class="hljs-string">&quot;/Users/UserName/Downloads/&quot;</span>
+fileStartsWith = <span class="hljs-string">&apos;test&apos;</span>
+fileEndsWith = <span class="hljs-string">&apos;.shp&apos;</span>
+driverName = <span class="hljs-string">&apos;ESRI Shapefile&apos;</span>
+geometryType = ogr.wkbPolygon
+
+out_driver = ogr.GetDriverByName( driverName )
+<span class="hljs-keyword">if</span> os.path.exists(outputMergefn):
+    out_driver.DeleteDataSource(outputMergefn)
+out_ds = out_driver.CreateDataSource(outputMergefn)
+out_layer = out_ds.CreateLayer(outputMergefn, geom_type=geometryType)
+
+fileList = os.listdir(directory)
+
+<span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> fileList:
+    <span class="hljs-keyword">if</span> file.startswith(fileStartsWith) <span class="hljs-keyword">and</span> file.endswith(fileEndsWith):
+        <span class="hljs-keyword">print</span> file
+        ds = ogr.Open(directory+file)
+        lyr = ds.GetLayer()
+        <span class="hljs-keyword">for</span> feat <span class="hljs-keyword">in</span> lyr:
+            out_feat = ogr.Feature(out_layer.GetLayerDefn())
+            out_feat.SetGeometry(feat.GetGeometryRef().Clone())
+            out_layer.CreateFeature(out_feat)
+            out_feat = <span class="hljs-keyword">None</span>
+            out_layer.SyncToDisk()
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;osm&#x8857;&#x9053;&#x540D;&#x79F0;">&#x83B7;&#x53D6;OSM&#x8857;&#x9053;&#x540D;&#x79F0;</h2>
+<p>TODO&#xFF1A;&#x6D4B;&#x8BD5;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr
+
+ds = ogr.Open(<span class="hljs-string">&apos;test.osm&apos;</span>)
+layer = ds.GetLayer()
+
+nameList = []
+<span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> layer:
+    <span class="hljs-keyword">if</span> feature.GetField(<span class="hljs-string">&quot;highway&quot;</span>) != <span class="hljs-keyword">None</span>:
+        name = feature.GetField(<span class="hljs-string">&quot;name&quot;</span>)
+        <span class="hljs-keyword">if</span> name != <span class="hljs-keyword">None</span> <span class="hljs-keyword">and</span> name <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> nameList:
+            nameList.append(name)
+
+<span class="hljs-keyword">print</span> (nameList)
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;&#x9C7C;&#x7F51;">&#x521B;&#x5EFA;&#x9C7C;&#x7F51;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os, sys
+<span class="hljs-keyword">import</span> ogr
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> ceil
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(outputGridfn,xmin,xmax,ymin,ymax,gridHeight,gridWidth)</span>:</span>
+    xmin = float(xmin)
+    xmax = float(xmax)
+    ymin = float(ymin)
+    ymax = float(ymax)
+    gridWidth = float(gridWidth)
+    gridHeight = float(gridHeight)
+
+    <span class="hljs-comment"># get rows</span>
+    rows = ceil((ymax-ymin)/gridHeight)
+    <span class="hljs-comment"># get columns</span>
+    cols = ceil((xmax-xmin)/gridWidth)
+
+    <span class="hljs-comment"># start grid cell envelope</span>
+    ringXleftOrigin = xmin
+    ringXrightOrigin = xmin + gridWidth
+    ringYtopOrigin = ymax
+    ringYbottomOrigin = ymax-gridHeight
+
+    <span class="hljs-comment"># create output file</span>
+    outDriver = ogr.GetDriverByName(<span class="hljs-string">&apos;ESRI Shapefile&apos;</span>)
+    <span class="hljs-keyword">if</span> os.path.exists(outputGridfn):
+        os.remove(outputGridfn)
+    outDataSource = outDriver.CreateDataSource(outputGridfn)
+    outLayer = outDataSource.CreateLayer(outputGridfn,geom_type=ogr.wkbPolygon )
+    featureDefn = outLayer.GetLayerDefn()
+
+    <span class="hljs-comment"># create grid cells</span>
+    countcols = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> countcols &lt; cols:
+        countcols += <span class="hljs-number">1</span>
+
+        <span class="hljs-comment"># reset envelope for rows</span>
+        ringYtop = ringYtopOrigin
+        ringYbottom =ringYbottomOrigin
+        countrows = <span class="hljs-number">0</span>
+
+        <span class="hljs-keyword">while</span> countrows &lt; rows:
+            countrows += <span class="hljs-number">1</span>
+            ring = ogr.Geometry(ogr.wkbLinearRing)
+            ring.AddPoint(ringXleftOrigin, ringYtop)
+            ring.AddPoint(ringXrightOrigin, ringYtop)
+            ring.AddPoint(ringXrightOrigin, ringYbottom)
+            ring.AddPoint(ringXleftOrigin, ringYbottom)
+            ring.AddPoint(ringXleftOrigin, ringYtop)
+            poly = ogr.Geometry(ogr.wkbPolygon)
+            poly.AddGeometry(ring)
+
+            <span class="hljs-comment"># add new geom to layer</span>
+            outFeature = ogr.Feature(featureDefn)
+            outFeature.SetGeometry(poly)
+            outLayer.CreateFeature(outFeature)
+            outFeature = <span class="hljs-keyword">None</span>
+
+            <span class="hljs-comment"># new envelope for next poly</span>
+            ringYtop = ringYtop - gridHeight
+            ringYbottom = ringYbottom - gridHeight
+
+        <span class="hljs-comment"># new envelope for next poly</span>
+        ringXleftOrigin = ringXleftOrigin + gridWidth
+        ringXrightOrigin = ringXrightOrigin + gridWidth
+
+    <span class="hljs-comment"># Save and close DataSources</span>
+    outDataSource = <span class="hljs-keyword">None</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># example run : $ python grid.py &lt;full-path&gt;&lt;output-shapefile-name&gt;.shp xmin xmax ymin ymax gridHeight gridWidth</span>
+    <span class="hljs-comment">#</span>
+
+    <span class="hljs-keyword">if</span> len( sys.argv ) != <span class="hljs-number">8</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;[ ERROR ] you must supply seven arguments: output-shapefile-name.shp xmin xmax ymin ymax gridHeight gridWidth&quot;</span>
+        sys.exit( <span class="hljs-number">1</span> )
+
+    main( sys.argv[<span class="hljs-number">1</span>], sys.argv[<span class="hljs-number">2</span>], sys.argv[<span class="hljs-number">3</span>], sys.argv[<span class="hljs-number">4</span>], sys.argv[<span class="hljs-number">5</span>], sys.argv[<span class="hljs-number">6</span>], sys.argv[<span class="hljs-number">7</span>] )
+</code></pre>
+<h2 id="&#x9762;&#x8F6C;&#x7EBF;">&#x9762;&#x8F6C;&#x7EBF;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr, os
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">poly2line</span><span class="hljs-params">(input_poly,output_line)</span>:</span>
+
+    source_ds = ogr.Open(input_poly)
+    source_layer = source_ds.GetLayer()
+
+    <span class="hljs-comment"># polygon2geometryCollection</span>
+    geomcol =  ogr.Geometry(ogr.wkbGeometryCollection)
+    <span class="hljs-keyword">for</span> feat <span class="hljs-keyword">in</span> source_layer:
+        geom = feat.GetGeometryRef()
+        ring = geom.GetGeometryRef(<span class="hljs-number">0</span>)
+        geomcol.AddGeometry(ring)
+
+    <span class="hljs-comment"># geometryCollection2shp</span>
+    shpDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+    <span class="hljs-keyword">if</span> os.path.exists(output_line):
+            shpDriver.DeleteDataSource(output_line)
+    outDataSource = shpDriver.CreateDataSource(output_line)
+    outLayer = outDataSource.CreateLayer(output_line, geom_type=ogr.wkbMultiLineString)
+    featureDefn = outLayer.GetLayerDefn()
+    outFeature = ogr.Feature(featureDefn)
+    outFeature.SetGeometry(geomcol)
+    outLayer.CreateFeature(outFeature)
+    outFeature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(input_poly,output_line)</span>:</span>
+    poly2line(input_poly,output_line)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    input_poly = <span class="hljs-string">&apos;test_polygon.shp&apos;</span>
+    output_line = <span class="hljs-string">&apos;test_line.shp&apos;</span>
+
+    main(input_poly,output_line)
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;&#x7F13;&#x51B2;&#x533A;">&#x521B;&#x5EFA;&#x7F13;&#x51B2;&#x533A;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr, os
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createBuffer</span><span class="hljs-params">(inputfn, outputBufferfn, bufferDist)</span>:</span>
+    inputds = ogr.Open(inputfn)
+    inputlyr = inputds.GetLayer()
+
+    shpdriver = ogr.GetDriverByName(<span class="hljs-string">&apos;ESRI Shapefile&apos;</span>)
+    <span class="hljs-keyword">if</span> os.path.exists(outputBufferfn):
+        shpdriver.DeleteDataSource(outputBufferfn)
+    outputBufferds = shpdriver.CreateDataSource(outputBufferfn)
+    bufferlyr = outputBufferds.CreateLayer(outputBufferfn, geom_type=ogr.wkbPolygon)
+    featureDefn = bufferlyr.GetLayerDefn()
+
+    <span class="hljs-keyword">for</span> feature <span class="hljs-keyword">in</span> inputlyr:
+        ingeom = feature.GetGeometryRef()
+        geomBuffer = ingeom.Buffer(bufferDist)
+
+        outFeature = ogr.Feature(featureDefn)
+        outFeature.SetGeometry(geomBuffer)
+        bufferlyr.CreateFeature(outFeature)
+        outFeature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(inputfn, outputBufferfn, bufferDist)</span>:</span>
+    createBuffer(inputfn, outputBufferfn, bufferDist)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    inputfn = <span class="hljs-string">&apos;test.shp&apos;</span>
+    outputBufferfn = <span class="hljs-string">&apos;testBuffer.shp&apos;</span>
+    bufferDist = <span class="hljs-number">10.0</span>
+
+    main(inputfn, outputBufferfn, bufferDist)
+</code></pre>
+<h2 id="&#x6805;&#x683C;&#x5316;&#x77E2;&#x91CF;&#x56FE;&#x5C42;">&#x6805;&#x683C;&#x5316;&#x77E2;&#x91CF;&#x56FE;&#x5C42;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr, gdal
+
+vector_fn = <span class="hljs-string">&apos;test.shp&apos;</span>
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x50CF;&#x7D20;&#x5927;&#x5C0F;&#x548C;&#x65E0;&#x6548;&#x503C;</span>
+pixel_size = <span class="hljs-number">25</span>
+NoData_value = <span class="hljs-number">255</span>
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x8303;&#x56F4;</span>
+source_ds = ogr.Open(vector_fn)
+source_layer = source_ds.GetLayer()
+source_srs = source_layer.GetSpatialRef()
+x_min, x_max, y_min, y_max = source_layer.GetExtent()
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x76EE;&#x6807;&#x6570;&#x636E;&#x6E90;</span>
+x_res = int((x_max - x_min) / pixel_size)
+y_res = int((y_max - y_min) / pixel_size)
+target_ds = gdal.GetDriverByName(<span class="hljs-string">&apos;MEM&apos;</span>).Create(<span class="hljs-string">&apos;&apos;</span>, x_res, y_res, gdal.GDT_Byte)
+target_ds.SetGeoTransform((x_min, pixel_size, <span class="hljs-number">0</span>, y_max, <span class="hljs-number">0</span>, -pixel_size))
+band = target_ds.GetRasterBand(<span class="hljs-number">1</span>)
+band.SetNoDataValue(NoData_value)
+
+<span class="hljs-comment"># &#x6805;&#x683C;&#x5316;</span>
+gdal.RasterizeLayer(target_ds, [<span class="hljs-number">1</span>], source_layer, burn_values=[<span class="hljs-number">1</span>])
+
+<span class="hljs-comment"># &#x8BFB;&#x53D6;&#x4E3A;&#x6570;&#x7EC4;</span>
+array = band.ReadAsArray()
+<span class="hljs-keyword">print</span> (array)
+</code></pre>
+<h2 id="&#x9762;&#x8F6C;&#x70B9;">&#x9762;&#x8F6C;&#x70B9;</h2>
+<p>TODO&#xFF1A;&#x6D4B;&#x8BD5;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ogr, gdal
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> os
+
+polygon_fn = <span class="hljs-string">&apos;test.shp&apos;</span>
+
+<span class="hljs-comment"># Define pixel_size which equals distance betweens points</span>
+pixel_size = <span class="hljs-number">10</span>
+
+<span class="hljs-comment"># Open the data source and read in the extent</span>
+source_ds = ogr.Open(polygon_fn)
+source_layer = source_ds.GetLayer()
+x_min, x_max, y_min, y_max = source_layer.GetExtent()
+
+<span class="hljs-comment"># Create the destination data source</span>
+x_res = int((x_max - x_min) / pixel_size)
+y_res = int((y_max - y_min) / pixel_size)
+target_ds = gdal.GetDriverByName(<span class="hljs-string">&apos;GTiff&apos;</span>).Create(<span class="hljs-string">&apos;temp.tif&apos;</span>, x_res, y_res, gdal.GDT_Byte)
+target_ds.SetGeoTransform((x_min, pixel_size, <span class="hljs-number">0</span>, y_max, <span class="hljs-number">0</span>, -pixel_size))
+band = target_ds.GetRasterBand(<span class="hljs-number">1</span>)
+band.SetNoDataValue(<span class="hljs-number">255</span>)
+
+<span class="hljs-comment"># Rasterize</span>
+gdal.RasterizeLayer(target_ds, [<span class="hljs-number">1</span>], source_layer, burn_values=[<span class="hljs-number">1</span>])
+
+<span class="hljs-comment"># Read as array</span>
+array = band.ReadAsArray()
+
+raster = gdal.Open(<span class="hljs-string">&apos;temp.tif&apos;</span>)
+geotransform = raster.GetGeoTransform()
+
+<span class="hljs-comment"># Convert array to point coordinates</span>
+count = <span class="hljs-number">0</span>
+roadList = np.where(array == <span class="hljs-number">1</span>)
+multipoint = ogr.Geometry(ogr.wkbMultiPoint)
+<span class="hljs-keyword">for</span> indexY <span class="hljs-keyword">in</span> roadList[<span class="hljs-number">0</span>]:
+    indexX = roadList[<span class="hljs-number">1</span>][count]
+    geotransform = raster.GetGeoTransform()
+    originX = geotransform[<span class="hljs-number">0</span>]
+    originY = geotransform[<span class="hljs-number">3</span>]
+    pixelWidth = geotransform[<span class="hljs-number">1</span>]
+    pixelHeight = geotransform[<span class="hljs-number">5</span>]
+    Xcoord = originX+pixelWidth*indexX
+    Ycoord = originY+pixelHeight*indexY
+    point = ogr.Geometry(ogr.wkbPoint)
+    point.AddPoint(Xcoord, Ycoord)
+    multipoint.AddGeometry(point)
+    count += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Write point coordinates to Shapefile</span>
+shpDriver = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+<span class="hljs-keyword">if</span> os.path.exists(<span class="hljs-string">&apos;points.shp&apos;</span>):
+    shpDriver.DeleteDataSource(<span class="hljs-string">&apos;points.shp&apos;</span>)
+outDataSource = shpDriver.CreateDataSource(<span class="hljs-string">&apos;points.shp&apos;</span>)
+outLayer = outDataSource.CreateLayer(<span class="hljs-string">&apos;points.shp&apos;</span>, geom_type=ogr.wkbMultiPoint)
+featureDefn = outLayer.GetLayerDefn()
+outFeature = ogr.Feature(featureDefn)
+outFeature.SetGeometry(multipoint)
+outLayer.CreateFeature(outFeature)
+outFeature = <span class="hljs-keyword">None</span>
+
+<span class="hljs-comment"># Remove temporary files</span>
+os.remove(<span class="hljs-string">&apos;temp.tif&apos;</span>)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2 几何.html#四等分多边形并创建质心" class="navigation navigation-prev " aria-label="Previous page: 四等分多边形并创建质心">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3 矢量图层.html#删除文件" class="navigation navigation-next " aria-label="Next page: 删除文件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3 矢量图层","level":"1.4","depth":1,"next":{"title":"删除文件","level":"1.4.1","depth":2,"anchor":"#删除文件","path":"gitbook/3 矢量图层.md","ref":"gitbook/3 矢量图层.md#删除文件","articles":[]},"previous":{"title":"四等分多边形并创建质心","level":"1.3.29","depth":2,"anchor":"#四等分多边形并创建质心","path":"gitbook/2 几何.md","ref":"gitbook/2 几何.md#四等分多边形并创建质心","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","chapter-fold","github","splitter","code","back-to-top-button","hide-element","donate","auto-scroll-table","lightbox","custom-favicon","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/luolingchun/py-gdalogr-cookbook-zh"},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/wechat.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"./gitbook/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"llc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GDAL/OGR 中文手册","language":"zh-hans","gitbook":"*","description":"GDAL/OGR 中文手册"},"file":{"path":"gitbook/3 矢量图层.md","mtime":"2020-03-09T08:49:03.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T08:45:20.068Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook.js"></script>
+    <script src="theme.js"></script>
+    
+        
+        <script src="gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
