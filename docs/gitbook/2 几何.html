@@ -1198,6 +1198,103 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="5 投影.html">
+            
+                <a href="5 投影.html">
+            
+                    
+                    5 投影
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="5 投影.html">
+            
+                <a href="5 投影.html#创建投影">
+            
+                    
+                    创建投影
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="5 投影.html">
+            
+                <a href="5 投影.html#重投影">
+            
+                    
+                    重投影
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="5 投影.html">
+            
+                <a href="5 投影.html#获取投影">
+            
+                    
+                    获取投影
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="5 投影.html">
+            
+                <a href="5 投影.html#重投影图层">
+            
+                    
+                    重投影图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="5 投影.html">
+            
+                <a href="5 投影.html#输出投影">
+            
+                    
+                    输出投影
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="5 投影.html">
+            
+                <a href="5 投影.html#创建esri投影文件">
+            
+                    
+                    创建ESRI投影文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1659,7 +1756,7 @@ print(wkt)
 poly_Wkt= <span class="hljs-string">&quot;POLYGON((-107.42631019589980212 40.11971708125970082,-107.42455436683293613 40.12061219666851741,-107.42020981542387403 40.12004414402532859,-107.41789122063043749 40.12149008687303819,-107.41419947746419439 40.11811617239460048,-107.41915181585792993 40.11761695654455906,-107.41998470913324581 40.11894245264452508,-107.42203317637793702 40.1184088144647788,-107.42430674991324224 40.1174448122981957,-107.42430674991324224 40.1174448122981957,-107.42631019589980212 40.11971708125970082))&quot;</span>
 geom_poly = ogr.CreateGeometryFromWkt(poly_Wkt)
 </code></pre>
-<p><a href="assets/quarter1.png" data-lightbox="26672d02-5e04-478b-a908-13956308b57c" data-title="quarter1"><img src="assets/quarter1.png" alt="quarter1"></a></p>
+<p><a href="assets/quarter1.png" data-lightbox="3e24709c-71eb-4220-8d38-b33fd8cd6576" data-title="quarter1"><img src="assets/quarter1.png" alt="quarter1"></a></p>
 <pre><code class="lang-python"><span class="hljs-comment"># Create 4 square polygons</span>
 geom_poly_envelope = geom_poly.GetEnvelope()
 minX = geom_poly_envelope[<span class="hljs-number">0</span>]
@@ -1723,21 +1820,21 @@ ringBottomRight.AddPoint_2D(*coord4)
 polyBottomRight = ogr.Geometry(ogr.wkbPolygon)
 polyBottomRight.AddGeometry(ringBottomRight)
 </code></pre>
-<p><a href="assets/quarter4.png" data-lightbox="2c410577-0dbe-4a73-8197-c0c7bd0baa9a" data-title="quarter4"><img src="assets/quarter4.png" alt="quarter4"></a></p>
+<p><a href="assets/quarter4.png" data-lightbox="697ae4d4-7890-4e00-8846-405b87f5651a" data-title="quarter4"><img src="assets/quarter4.png" alt="quarter4"></a></p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x5BF9;&#x56DB;&#x4E2A;&#x65B9;&#x683C;&#x591A;&#x8FB9;&#x5F62;&#x6C42;&#x4EA4;</span>
 quaterPolyTopLeft = polyTopLeft.Intersection(geom_poly)
 quaterPolyTopRight =  polyTopRight.Intersection(geom_poly)
 quaterPolyBottomLeft =  polyBottomLeft.Intersection(geom_poly)
 quaterPolyBottomRight =  polyBottomRight.Intersection(geom_poly)
 </code></pre>
-<p><a href="assets/quarter6.png" data-lightbox="6ce77770-eab4-49f5-bbe7-b926dcf02f20" data-title="_images/quarter6.png"><img src="assets/quarter6.png" alt="_images/quarter6.png"></a></p>
+<p><a href="assets/quarter6.png" data-lightbox="423fd950-77fd-439b-91ac-74766e696c8c" data-title="_images/quarter6.png"><img src="assets/quarter6.png" alt="_images/quarter6.png"></a></p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x8D28;&#x5FC3;</span>
 centroidTopLeft = quaterPolyTopLeft.Centroid()
 centroidTopRight =  quaterPolyTopRight.Centroid()
 centroidBottomLeft =  quaterPolyBottomLeft.Centroid()
 centroidBottomRight =  quaterPolyBottomRight.Centroid()
 </code></pre>
-<p><a href="assets/quarter9.png" data-lightbox="89098b5d-4735-4db6-bf8a-52676c1d8621" data-title="_images/quarter9.png"><img src="assets/quarter9.png" alt="_images/quarter9.png"></a></p>
+<p><a href="assets/quarter9.png" data-lightbox="69ab5ae7-0cf1-4072-9986-b741a8ef85e8" data-title="_images/quarter9.png"><img src="assets/quarter9.png" alt="_images/quarter9.png"></a></p>
 
                                 
                                 </section>
@@ -1781,7 +1878,7 @@ centroidBottomRight =  quaterPolyBottomRight.Centroid()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2 几何","level":"1.3","depth":1,"next":{"title":"创建点","level":"1.3.1","depth":2,"anchor":"#创建点","path":"gitbook/2 几何.md","ref":"gitbook/2 几何.md#创建点","articles":[]},"previous":{"title":"安装GDAL OGR错误处理","level":"1.2.4","depth":2,"anchor":"#安装gdal-ogr错误处理","path":"gitbook/1 一般使用.md","ref":"gitbook/1 一般使用.md#安装gdal-ogr错误处理","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","chapter-fold","github","splitter","code","back-to-top-button","hide-element","donate","auto-scroll-table","lightbox","custom-favicon","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/luolingchun/py-gdalogr-cookbook-zh"},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/wechat.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"./gitbook/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"llc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GDAL/OGR 中文手册","language":"zh-hans","gitbook":"*","description":"GDAL/OGR 中文手册"},"file":{"path":"gitbook/2 几何.md","mtime":"2020-03-08T07:54:54.477Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T03:36:11.119Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2 几何","level":"1.3","depth":1,"next":{"title":"创建点","level":"1.3.1","depth":2,"anchor":"#创建点","path":"gitbook/2 几何.md","ref":"gitbook/2 几何.md#创建点","articles":[]},"previous":{"title":"安装GDAL OGR错误处理","level":"1.2.4","depth":2,"anchor":"#安装gdal-ogr错误处理","path":"gitbook/1 一般使用.md","ref":"gitbook/1 一般使用.md#安装gdal-ogr错误处理","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","chapter-fold","github","splitter","code","back-to-top-button","hide-element","donate","auto-scroll-table","lightbox","custom-favicon","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/luolingchun/py-gdalogr-cookbook-zh"},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/wechat.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"./gitbook/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"llc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GDAL/OGR 中文手册","language":"zh-hans","gitbook":"*","description":"GDAL/OGR 中文手册"},"file":{"path":"gitbook/2 几何.md","mtime":"2020-03-08T07:54:54.477Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T06:07:24.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
