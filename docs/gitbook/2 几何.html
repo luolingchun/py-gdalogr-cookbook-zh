@@ -1023,6 +1023,181 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html">
+            
+                    
+                    4 栅格图层
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#关闭栅格数据">
+            
+                    
+                    关闭栅格数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#获取元数据">
+            
+                    
+                    获取元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#波段融合">
+            
+                    
+                    波段融合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#获取波段">
+            
+                    
+                    获取波段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#遍历波段">
+            
+                    
+                    遍历波段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#获取波段信息">
+            
+                    
+                    获取波段信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#多边形化栅格波段">
+            
+                    
+                    多边形化栅格波段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#栅格化矢量数据">
+            
+                    
+                    栅格化矢量数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#用shapefile裁剪栅格">
+            
+                    
+                    用shapefile裁剪栅格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#区域统计">
+            
+                    
+                    区域统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#从数组创建栅格">
+            
+                    
+                    从数组创建栅格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#替换无效值">
+            
+                    
+                    替换无效值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1484,7 +1659,7 @@ print(wkt)
 poly_Wkt= <span class="hljs-string">&quot;POLYGON((-107.42631019589980212 40.11971708125970082,-107.42455436683293613 40.12061219666851741,-107.42020981542387403 40.12004414402532859,-107.41789122063043749 40.12149008687303819,-107.41419947746419439 40.11811617239460048,-107.41915181585792993 40.11761695654455906,-107.41998470913324581 40.11894245264452508,-107.42203317637793702 40.1184088144647788,-107.42430674991324224 40.1174448122981957,-107.42430674991324224 40.1174448122981957,-107.42631019589980212 40.11971708125970082))&quot;</span>
 geom_poly = ogr.CreateGeometryFromWkt(poly_Wkt)
 </code></pre>
-<p><a href="assets/quarter1.png" data-lightbox="32814ac7-39cb-450e-b67d-d46d89e62334" data-title="quarter1"><img src="assets/quarter1.png" alt="quarter1"></a></p>
+<p><a href="assets/quarter1.png" data-lightbox="26672d02-5e04-478b-a908-13956308b57c" data-title="quarter1"><img src="assets/quarter1.png" alt="quarter1"></a></p>
 <pre><code class="lang-python"><span class="hljs-comment"># Create 4 square polygons</span>
 geom_poly_envelope = geom_poly.GetEnvelope()
 minX = geom_poly_envelope[<span class="hljs-number">0</span>]
@@ -1548,21 +1723,21 @@ ringBottomRight.AddPoint_2D(*coord4)
 polyBottomRight = ogr.Geometry(ogr.wkbPolygon)
 polyBottomRight.AddGeometry(ringBottomRight)
 </code></pre>
-<p><a href="assets/quarter4.png" data-lightbox="36814afa-f937-4efc-9400-300f34386bfe" data-title="quarter4"><img src="assets/quarter4.png" alt="quarter4"></a></p>
+<p><a href="assets/quarter4.png" data-lightbox="2c410577-0dbe-4a73-8197-c0c7bd0baa9a" data-title="quarter4"><img src="assets/quarter4.png" alt="quarter4"></a></p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x5BF9;&#x56DB;&#x4E2A;&#x65B9;&#x683C;&#x591A;&#x8FB9;&#x5F62;&#x6C42;&#x4EA4;</span>
 quaterPolyTopLeft = polyTopLeft.Intersection(geom_poly)
 quaterPolyTopRight =  polyTopRight.Intersection(geom_poly)
 quaterPolyBottomLeft =  polyBottomLeft.Intersection(geom_poly)
 quaterPolyBottomRight =  polyBottomRight.Intersection(geom_poly)
 </code></pre>
-<p><a href="assets/quarter6.png" data-lightbox="95bad98b-e6fa-42d3-a118-b2d0db29a5a0" data-title="_images/quarter6.png"><img src="assets/quarter6.png" alt="_images/quarter6.png"></a></p>
+<p><a href="assets/quarter6.png" data-lightbox="6ce77770-eab4-49f5-bbe7-b926dcf02f20" data-title="_images/quarter6.png"><img src="assets/quarter6.png" alt="_images/quarter6.png"></a></p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x8D28;&#x5FC3;</span>
 centroidTopLeft = quaterPolyTopLeft.Centroid()
 centroidTopRight =  quaterPolyTopRight.Centroid()
 centroidBottomLeft =  quaterPolyBottomLeft.Centroid()
 centroidBottomRight =  quaterPolyBottomRight.Centroid()
 </code></pre>
-<p><a href="assets/quarter9.png" data-lightbox="c1207e7f-8cc3-4d73-82e9-11f907655ebe" data-title="_images/quarter9.png"><img src="assets/quarter9.png" alt="_images/quarter9.png"></a></p>
+<p><a href="assets/quarter9.png" data-lightbox="89098b5d-4735-4db6-bf8a-52676c1d8621" data-title="_images/quarter9.png"><img src="assets/quarter9.png" alt="_images/quarter9.png"></a></p>
 
                                 
                                 </section>
@@ -1606,7 +1781,7 @@ centroidBottomRight =  quaterPolyBottomRight.Centroid()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2 几何","level":"1.3","depth":1,"next":{"title":"创建点","level":"1.3.1","depth":2,"anchor":"#创建点","path":"gitbook/2 几何.md","ref":"gitbook/2 几何.md#创建点","articles":[]},"previous":{"title":"安装GDAL OGR错误处理","level":"1.2.4","depth":2,"anchor":"#安装gdal-ogr错误处理","path":"gitbook/1 一般使用.md","ref":"gitbook/1 一般使用.md#安装gdal-ogr错误处理","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","chapter-fold","github","splitter","code","back-to-top-button","hide-element","donate","auto-scroll-table","lightbox","custom-favicon","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/luolingchun/py-gdalogr-cookbook-zh"},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/wechat.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"./gitbook/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"llc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GDAL/OGR 中文手册","language":"zh-hans","gitbook":"*","description":"GDAL/OGR 中文手册"},"file":{"path":"gitbook/2 几何.md","mtime":"2020-03-08T07:54:54.477Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T08:45:20.068Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2 几何","level":"1.3","depth":1,"next":{"title":"创建点","level":"1.3.1","depth":2,"anchor":"#创建点","path":"gitbook/2 几何.md","ref":"gitbook/2 几何.md#创建点","articles":[]},"previous":{"title":"安装GDAL OGR错误处理","level":"1.2.4","depth":2,"anchor":"#安装gdal-ogr错误处理","path":"gitbook/1 一般使用.md","ref":"gitbook/1 一般使用.md#安装gdal-ogr错误处理","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","chapter-fold","github","splitter","code","back-to-top-button","hide-element","donate","auto-scroll-table","lightbox","custom-favicon","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/luolingchun/py-gdalogr-cookbook-zh"},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/wechat.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"./gitbook/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"llc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GDAL/OGR 中文手册","language":"zh-hans","gitbook":"*","description":"GDAL/OGR 中文手册"},"file":{"path":"gitbook/2 几何.md","mtime":"2020-03-08T07:54:54.477Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T03:36:11.119Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

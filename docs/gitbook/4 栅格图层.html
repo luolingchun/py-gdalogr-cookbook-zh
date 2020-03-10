@@ -1,0 +1,1927 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4 栅格图层 · GDAL/OGR 中文手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="llc">
+        
+        
+    
+    <link rel="stylesheet" href="style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4 栅格图层.html" />
+    
+    
+    <link rel="prev" href="3 矢量图层.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    0 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html">
+            
+                    
+                    1 一般使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#检测安装">
+            
+                    
+                    检测安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#查看版本">
+            
+                    
+                    查看版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#开启python异常">
+            
+                    
+                    开启python异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1 一般使用.html">
+            
+                <a href="1 一般使用.html#安装gdal-ogr错误处理">
+            
+                    
+                    安装GDAL OGR错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2 几何.html">
+            
+                <a href="2 几何.html">
+            
+                    
+                    2 几何
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建点">
+            
+                    
+                    创建点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建线">
+            
+                    
+                    创建线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多边形">
+            
+                    
+                    创建多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建带洞的多边形">
+            
+                    
+                    创建带洞的多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多部件点">
+            
+                    
+                    创建多部件点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多部件线">
+            
+                    
+                    创建多部件线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建多部件多边形">
+            
+                    
+                    创建多部件多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="2 几何.html">
+            
+                <a href="2 几何.html#创建几何集合">
+            
+                    
+                    创建几何集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从wkt创建几何">
+            
+                    
+                    从WKT创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从geojson创建几何">
+            
+                    
+                    从GeoJSON创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从gml创建几何">
+            
+                    
+                    从GML创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="2 几何.html">
+            
+                <a href="2 几何.html#从wkb创建几何">
+            
+                    
+                    从WKB创建几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算点的个数">
+            
+                    
+                    计算点的个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算几何个数">
+            
+                    
+                    计算几何个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="2 几何.html">
+            
+                <a href="2 几何.html#迭代几何">
+            
+                    
+                    迭代几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="2 几何.html">
+            
+                <a href="2 几何.html#迭代点">
+            
+                    
+                    迭代点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="2 几何.html">
+            
+                <a href="2 几何.html#几何缓冲区">
+            
+                    
+                    几何缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算包围盒">
+            
+                    
+                    计算包围盒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算面积">
+            
+                    
+                    计算面积
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算长度">
+            
+                    
+                    计算长度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="2 几何.html">
+            
+                <a href="2 几何.html#获得几何类型">
+            
+                    
+                    获得几何类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算几何相交">
+            
+                    
+                    计算几何相交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="2 几何.html">
+            
+                <a href="2 几何.html#计算几何并集">
+            
+                    
+                    计算几何并集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到geojson">
+            
+                    
+                    输出几何到GeoJSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到wkt">
+            
+                    
+                    输出几何到WKT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到kml">
+            
+                    
+                    输出几何到KML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="2 几何.html">
+            
+                <a href="2 几何.html#输出几何到wkb">
+            
+                    
+                    输出几何到WKB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="2 几何.html">
+            
+                <a href="2 几何.html#强制多边形到多部件多边形">
+            
+                    
+                    强制多边形到多部件多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="2 几何.html">
+            
+                <a href="2 几何.html#四等分多边形并创建质心">
+            
+                    
+                    四等分多边形并创建质心
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html">
+            
+                    
+                    3 矢量图层
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#删除文件">
+            
+                    
+                    删除文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取ogr驱动列表">
+            
+                    
+                    获取OGR驱动列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#驱动是否可用">
+            
+                    
+                    驱动是否可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取shapefile要素个数">
+            
+                    
+                    获取shapefile要素个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取postgis图层">
+            
+                    
+                    获取PostGIS图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取postgis图层的要素">
+            
+                    
+                    获取PostGIS图层的要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取esri-gdb图层">
+            
+                    
+                    获取ESRI GDB图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#加载数据到内存">
+            
+                    
+                    加载数据到内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#遍历要素">
+            
+                    
+                    遍历要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#遍历要素几何">
+            
+                    
+                    遍历要素几何
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#过滤属性">
+            
+                    
+                    过滤属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#空间过滤">
+            
+                    
+                    空间过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取要素字段">
+            
+                    
+                    获取要素字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取postgis图层字段">
+            
+                    
+                    获取PostGIS图层字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取图层能力">
+            
+                    
+                    获取图层能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#wfs图层和遍历要素">
+            
+                    
+                    WFS图层和遍历要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#设置http代理">
+            
+                    
+                    设置HTTP代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#读取csv经纬度作为ogrvrtlayer">
+            
+                    
+                    读取CSV经纬度作为OGRVRTLayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#计算范围">
+            
+                    
+                    计算范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#计算凸包">
+            
+                    
+                    计算凸包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#计算质心">
+            
+                    
+                    计算质心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#创建新的shp数据并添加数据">
+            
+                    
+                    创建新的shp数据并添加数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#从wkt创建postgis表">
+            
+                    
+                    从WKT创建PostGIS表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#过滤和选择">
+            
+                    
+                    过滤和选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#合并图层">
+            
+                    
+                    合并图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#获取osm街道名称">
+            
+                    
+                    获取OSM街道名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#创建鱼网">
+            
+                    
+                    创建鱼网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#面转线">
+            
+                    
+                    面转线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#创建缓冲区">
+            
+                    
+                    创建缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#栅格化矢量图层">
+            
+                    
+                    栅格化矢量图层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="3 矢量图层.html">
+            
+                <a href="3 矢量图层.html#面转点">
+            
+                    
+                    面转点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html">
+            
+                    
+                    4 栅格图层
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#关闭栅格数据">
+            
+                    
+                    关闭栅格数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#获取元数据">
+            
+                    
+                    获取元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#波段融合">
+            
+                    
+                    波段融合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#获取波段">
+            
+                    
+                    获取波段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#遍历波段">
+            
+                    
+                    遍历波段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#获取波段信息">
+            
+                    
+                    获取波段信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#多边形化栅格波段">
+            
+                    
+                    多边形化栅格波段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#栅格化矢量数据">
+            
+                    
+                    栅格化矢量数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#用shapefile裁剪栅格">
+            
+                    
+                    用shapefile裁剪栅格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#区域统计">
+            
+                    
+                    区域统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#从数组创建栅格">
+            
+                    
+                    从数组创建栅格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="4 栅格图层.html">
+            
+                <a href="4 栅格图层.html#替换无效值">
+            
+                    
+                    替换无效值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4 栅格图层</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6805;&#x683C;&#x56FE;&#x5C42;">&#x6805;&#x683C;&#x56FE;&#x5C42;</h1>
+<h2 id="&#x5173;&#x95ED;&#x6805;&#x683C;&#x6570;&#x636E;">&#x5173;&#x95ED;&#x6805;&#x683C;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;</span>
+ds = gdal.Open(<span class="hljs-string">&apos;test.tif&apos;</span>)
+
+<span class="hljs-comment"># &#x5173;&#x95ED;&#x6570;&#x636E;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;</span>
+ds = <span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;&#x5143;&#x6570;&#x636E;">&#x83B7;&#x53D6;&#x5143;&#x6570;&#x636E;</h2>
+<pre><code>from osgeo import gdal
+gtif = gdal.Open( &quot;merge.tif&quot; )
+print (gtif.GetMetadata())
+</code></pre><h2 id="&#x6CE2;&#x6BB5;&#x878D;&#x5408;">&#x6CE2;&#x6BB5;&#x878D;&#x5408;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;</span>
+ds1=gdal.Open(<span class="hljs-string">&quot;LM51130321998341HAJ00_B1.TIF&quot;</span>)
+ds2=gdal.Open(<span class="hljs-string">&quot;LM51130321998341HAJ00_B2.TIF&quot;</span>)
+ds3=gdal.Open(<span class="hljs-string">&quot;LM51130321998341HAJ00_B3.TIF&quot;</span>)
+ds4=gdal.Open(<span class="hljs-string">&quot;LM51130321998341HAJ00_B4.TIF&quot;</span>)
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6CE2;&#x6BB5;</span>
+b1=ds1.GetRasterBand(<span class="hljs-number">1</span>)
+b2=ds1.GetRasterBand(<span class="hljs-number">1</span>)
+b3=ds1.GetRasterBand(<span class="hljs-number">1</span>)
+b4=ds1.GetRasterBand(<span class="hljs-number">1</span>)
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x6570;&#x636E;</span>
+driver=gdal.GetDriverByName(<span class="hljs-string">&quot;GTiff&quot;</span>)
+out_ds=driver.Create(<span class="hljs-string">&apos;merge.tif&apos;</span>,ds1.RasterXSize,ds1.RasterYSize,<span class="hljs-number">4</span>,gdal.GDT_Byte)
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5750;&#x6807;&#x548C;&#x6295;&#x5F71;</span>
+out_ds.SetGeoTransform(ds1.GetGeoTransform())
+out_ds.SetProjection(ds1.GetProjection())
+
+ob1=out_ds.GetRasterBand(<span class="hljs-number">1</span>)
+ob2=out_ds.GetRasterBand(<span class="hljs-number">2</span>)
+ob3=out_ds.GetRasterBand(<span class="hljs-number">3</span>)
+ob4=out_ds.GetRasterBand(<span class="hljs-number">4</span>)
+<span class="hljs-comment"># &#x5199;&#x5165;&#x6570;&#x636E;</span>
+ob1.WriteArray(b1.ReadAsArray())
+ob2.WriteArray(b2.ReadAsArray())
+ob3.WriteArray(b3.ReadAsArray())
+ob4.WriteArray(b4.ReadAsArray())
+
+out_ds=<span class="hljs-keyword">None</span>
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;&#x6CE2;&#x6BB5;">&#x83B7;&#x53D6;&#x6CE2;&#x6BB5;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-comment"># &#x5141;&#x8BB8;python&#x5F02;&#x5E38;</span>
+gdal.UseExceptions()
+
+<span class="hljs-keyword">try</span>:
+    src_ds = gdal.Open( <span class="hljs-string">&quot;merge.tif&quot;</span> )
+<span class="hljs-keyword">except</span> RuntimeError <span class="hljs-keyword">as</span> e:
+    print(e)
+    sys.exit(<span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">try</span>:
+    srcband = src_ds.GetRasterBand(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">except</span> RuntimeError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-comment"># &#x8BD5;&#x4E00;&#x4E0B; GetRasterBand(10)</span>
+    print(e)
+    sys.exit(<span class="hljs-number">1</span>)
+</code></pre>
+<h2 id="&#x904D;&#x5386;&#x6CE2;&#x6BB5;">&#x904D;&#x5386;&#x6CE2;&#x6BB5;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal
+<span class="hljs-keyword">import</span> sys
+
+src_ds = gdal.Open( <span class="hljs-string">&quot;merge.tif&quot;</span> )
+
+<span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;&#x6CE2;&#x6BB5;&#x4E2A;&#x6570;: &quot;</span>, src_ds.RasterCount)
+<span class="hljs-keyword">for</span> band <span class="hljs-keyword">in</span> range( src_ds.RasterCount ):
+    band += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6CE2;&#x6BB5;: &quot;</span>, band)
+    srcband = src_ds.GetRasterBand(band)
+    <span class="hljs-keyword">if</span> srcband <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">continue</span>
+
+    stats = srcband.GetStatistics( <span class="hljs-keyword">True</span>, <span class="hljs-keyword">True</span> )
+    <span class="hljs-keyword">if</span> stats <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">continue</span>
+
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ STATS ] =  Minimum=%.3f, Maximum=%.3f, Mean=%.3f, StdDev=%.3f&quot;</span> % ( \
+                stats[<span class="hljs-number">0</span>], stats[<span class="hljs-number">1</span>], stats[<span class="hljs-number">2</span>], stats[<span class="hljs-number">3</span>] ))
+</code></pre>
+<h2 id="&#x83B7;&#x53D6;&#x6CE2;&#x6BB5;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x6CE2;&#x6BB5;&#x4FE1;&#x606F;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal
+<span class="hljs-keyword">import</span> sys
+gdal.UseExceptions()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">( band_num, input_file )</span>:</span>
+    src_ds = gdal.Open( input_file )
+
+    <span class="hljs-keyword">try</span>:
+        srcband = src_ds.GetRasterBand(band_num)
+    <span class="hljs-keyword">except</span> RuntimeError <span class="hljs-keyword">as</span> e:
+        print( e)
+        sys.exit(<span class="hljs-number">1</span>)
+
+
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ NO DATA VALUE ] = &quot;</span>, srcband.GetNoDataValue())
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ MIN ] = &quot;</span>, srcband.GetMinimum())
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ MAX ] = &quot;</span>, srcband.GetMaximum())
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ SCALE ] = &quot;</span>, srcband.GetScale())
+    print( <span class="hljs-string">&quot;[ UNIT TYPE ] = &quot;</span>, srcband.GetUnitType())
+    ctable = srcband.GetColorTable()
+
+    <span class="hljs-keyword">if</span> ctable <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;No ColorTable found&apos;</span>)
+        sys.exit(<span class="hljs-number">1</span>)
+
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ COLOR TABLE COUNT ] = &quot;</span>, ctable.GetCount())
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( <span class="hljs-number">0</span>, ctable.GetCount() ):
+        entry = ctable.GetColorEntry( i )
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> entry:
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;[ COLOR ENTRY RGB ] = &quot;</span>, ctable.GetColorEntryAsRGB( i, entry ))
+
+main( <span class="hljs-number">1</span>,<span class="hljs-string">&quot;merge.tif&quot;</span> )
+</code></pre>
+<h2 id="&#x591A;&#x8FB9;&#x5F62;&#x5316;&#x6805;&#x683C;&#x6CE2;&#x6BB5;">&#x591A;&#x8FB9;&#x5F62;&#x5316;&#x6805;&#x683C;&#x6CE2;&#x6BB5;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal, ogr
+<span class="hljs-keyword">import</span> sys
+
+gdal.UseExceptions()
+
+src_ds = gdal.Open( <span class="hljs-string">&quot;test.tif&quot;</span> )
+
+srcband = src_ds.GetRasterBand(<span class="hljs-number">3</span>)
+
+dst_layername = <span class="hljs-string">&quot;POLYGONIZED_STUFF&quot;</span>
+drv = ogr.GetDriverByName(<span class="hljs-string">&quot;ESRI Shapefile&quot;</span>)
+dst_ds = drv.CreateDataSource( dst_layername + <span class="hljs-string">&quot;.shp&quot;</span> )
+dst_layer = dst_ds.CreateLayer(dst_layername, srs = <span class="hljs-keyword">None</span> )
+
+gdal.Polygonize( srcband, <span class="hljs-keyword">None</span>, dst_layer, <span class="hljs-number">-1</span>, [], callback=<span class="hljs-keyword">None</span> )
+</code></pre>
+<h2 id="&#x6805;&#x683C;&#x5316;&#x77E2;&#x91CF;&#x6570;&#x636E;">&#x6805;&#x683C;&#x5316;&#x77E2;&#x91CF;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal, ogr
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x50CF;&#x7D20;&#x5927;&#x5C0F;&#x548C;&#x65E0;&#x6548;&#x503C;</span>
+pixel_size = <span class="hljs-number">25</span>
+NoData_value = <span class="hljs-number">-9999</span>
+
+vector_fn = <span class="hljs-string">&apos;test.shp&apos;</span>
+
+raster_fn = <span class="hljs-string">&apos;test.tif&apos;</span>
+
+<span class="hljs-comment"># &#x6253;&#x5F00;&#x6570;&#x636E;&#x5E76;&#x8BFB;&#x53D6;&#x8303;&#x56F4;</span>
+source_ds = ogr.Open(vector_fn)
+source_layer = source_ds.GetLayer()
+x_min, x_max, y_min, y_max = source_layer.GetExtent()
+
+x_res = int((x_max - x_min) / pixel_size)
+y_res = int((y_max - y_min) / pixel_size)
+target_ds = gdal.GetDriverByName(<span class="hljs-string">&apos;GTiff&apos;</span>).Create(raster_fn, x_res, y_res, <span class="hljs-number">1</span>, gdal.GDT_Byte)
+target_ds.SetGeoTransform((x_min, pixel_size, <span class="hljs-number">0</span>, y_max, <span class="hljs-number">0</span>, -pixel_size))
+band = target_ds.GetRasterBand(<span class="hljs-number">1</span>)
+band.SetNoDataValue(NoData_value)
+
+<span class="hljs-comment"># &#x6805;&#x683C;&#x5316;</span>
+gdal.RasterizeLayer(target_ds, [<span class="hljs-number">1</span>], source_layer, burn_values=[<span class="hljs-number">0</span>])
+</code></pre>
+<h2 id="&#x7528;shapefile&#x88C1;&#x526A;&#x6805;&#x683C;">&#x7528;shapefile&#x88C1;&#x526A;&#x6805;&#x683C;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> osgeo <span class="hljs-keyword">import</span> gdal, gdalnumeric, ogr, osr
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image, ImageDraw
+<span class="hljs-keyword">import</span> os, sys
+gdal.UseExceptions()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">imageToArray</span><span class="hljs-params">(i)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    Image&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x7EC4;.
+    &quot;&quot;&quot;</span>
+    a=gdalnumeric.fromstring(i.tostring(),<span class="hljs-string">&apos;b&apos;</span>)
+    a.shape=i.im.size[<span class="hljs-number">1</span>], i.im.size[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">return</span> a
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">arrayToImage</span><span class="hljs-params">(a)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+   &#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x4E3A;Image.
+    &quot;&quot;&quot;</span>
+    i=Image.fromstring(<span class="hljs-string">&apos;L&apos;</span>,(a.shape[<span class="hljs-number">1</span>],a.shape[<span class="hljs-number">0</span>]),
+            (a.astype(<span class="hljs-string">&apos;b&apos;</span>)).tostring())
+    <span class="hljs-keyword">return</span> i
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">world2Pixel</span><span class="hljs-params">(geoMatrix, x, y)</span>:</span>
+  <span class="hljs-string">&quot;&quot;&quot;
+  &#x7528;&#x5730;&#x7406;&#x4EFF;&#x5C04;&#x53D8;&#x6362;&#x8BA1;&#x7B97;&#x50CF;&#x7D20;&#x5750;&#x6807;
+  &quot;&quot;&quot;</span>
+  ulX = geoMatrix[<span class="hljs-number">0</span>]
+  ulY = geoMatrix[<span class="hljs-number">3</span>]
+  xDist = geoMatrix[<span class="hljs-number">1</span>]
+  yDist = geoMatrix[<span class="hljs-number">5</span>]
+  rtnX = geoMatrix[<span class="hljs-number">2</span>]
+  rtnY = geoMatrix[<span class="hljs-number">4</span>]
+  pixel = int((x - ulX) / xDist)
+  line = int((ulY - y) / xDist)
+  <span class="hljs-keyword">return</span> (pixel, line)
+
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#  EDIT: this is basically an overloaded</span>
+<span class="hljs-comment">#  version of the gdal_array.OpenArray passing in xoff, yoff explicitly</span>
+<span class="hljs-comment">#  so we can pass these params off to CopyDatasetInfo</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">OpenArray</span><span class="hljs-params">( array, prototype_ds = None, xoff=<span class="hljs-number">0</span>, yoff=<span class="hljs-number">0</span> )</span>:</span>
+    ds = gdal.Open( gdalnumeric.GetArrayFilename(array) )
+
+    <span class="hljs-keyword">if</span> ds <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">and</span> prototype_ds <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">if</span> type(prototype_ds).__name__ == <span class="hljs-string">&apos;str&apos;</span>:
+            prototype_ds = gdal.Open( prototype_ds )
+        <span class="hljs-keyword">if</span> prototype_ds <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+            gdalnumeric.CopyDatasetInfo( prototype_ds, ds, xoff=xoff, yoff=yoff )
+    <span class="hljs-keyword">return</span> ds
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">histogram</span><span class="hljs-params">(a, bins=range<span class="hljs-params">(<span class="hljs-number">0</span>,<span class="hljs-number">256</span>)</span>)</span>:</span>
+  <span class="hljs-string">&quot;&quot;&quot;
+  Histogram function for multi-dimensional array.
+  a = array
+  bins = range of numbers to match
+  &quot;&quot;&quot;</span>
+  fa = a.flat
+  n = gdalnumeric.searchsorted(gdalnumeric.sort(fa), bins)
+  n = gdalnumeric.concatenate([n, [len(fa)]])
+  hist = n[<span class="hljs-number">1</span>:]-n[:<span class="hljs-number">-1</span>]
+  <span class="hljs-keyword">return</span> hist
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">stretch</span><span class="hljs-params">(a)</span>:</span>
+  <span class="hljs-string">&quot;&quot;&quot;
+  Performs a histogram stretch on a gdalnumeric array image.
+  &quot;&quot;&quot;</span>
+  hist = histogram(a)
+  im = arrayToImage(a)
+  lut = []
+  <span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, len(hist), <span class="hljs-number">256</span>):
+    <span class="hljs-comment"># step size</span>
+    step = reduce(operator.add, hist[b:b+<span class="hljs-number">256</span>]) / <span class="hljs-number">255</span>
+    <span class="hljs-comment"># create equalization lookup table</span>
+    n = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">256</span>):
+      lut.append(n / step)
+      n = n + hist[i+b]
+  im = im.point(lut)
+  <span class="hljs-keyword">return</span> imageToArray(im)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">( shapefile_path, raster_path )</span>:</span>
+    <span class="hljs-comment"># &#x8BFB;&#x53D6;&#x6570;&#x636E;&#x5230;&#x6570;&#x7EC4;</span>
+    srcArray = gdalnumeric.LoadFile(raster_path)
+
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x5730;&#x7406;&#x4EFF;&#x5C04;&#x53D8;&#x6362;</span>
+    srcImage = gdal.Open(raster_path)
+    geoTrans = srcImage.GetGeoTransform()
+
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x77E2;&#x91CF;&#x56FE;&#x5C42;</span>
+    shapef = ogr.Open(shapefile_path)
+    lyr = shapef.GetLayer( os.path.split( os.path.splitext( shapefile_path )[<span class="hljs-number">0</span>] )[<span class="hljs-number">1</span>] )
+    poly = lyr.GetNextFeature()
+
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x8303;&#x56F4;</span>
+    minX, maxX, minY, maxY = lyr.GetExtent()
+    ulX, ulY = world2Pixel(geoTrans, minX, maxY)
+    lrX, lrY = world2Pixel(geoTrans, maxX, minY)
+
+    <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x50CF;&#x7D20;&#x5927;&#x5C0F;</span>
+    pxWidth = int(lrX - ulX)
+    pxHeight = int(lrY - ulY)
+
+    clip = srcArray[:, ulY:lrY, ulX:lrX]
+
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># &#x50CF;&#x7D20;&#x504F;&#x79FB;</span>
+    <span class="hljs-comment">#</span>
+    xoffset =  ulX
+    yoffset =  ulY
+    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;Xoffset, Yoffset = ( %f, %f )&quot;</span> % ( xoffset, yoffset ))
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x65B0;&#x7684;&#x4EFF;&#x5C04;&#x53D8;&#x6362;</span>
+    geoTrans = list(geoTrans)
+    geoTrans[<span class="hljs-number">0</span>] = minX
+    geoTrans[<span class="hljs-number">3</span>] = maxY
+
+    <span class="hljs-comment"># Map points to pixels for drawing the</span>
+    <span class="hljs-comment"># boundary on a blank 8-bit,</span>
+    <span class="hljs-comment"># black and white, mask image.</span>
+    points = []
+    pixels = []
+    geom = poly.GetGeometryRef()
+    pts = geom.GetGeometryRef(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> range(pts.GetPointCount()):
+      points.append((pts.GetX(p), pts.GetY(p)))
+    <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> points:
+      pixels.append(world2Pixel(geoTrans, p[<span class="hljs-number">0</span>], p[<span class="hljs-number">1</span>]))
+    rasterPoly = Image.new(<span class="hljs-string">&quot;L&quot;</span>, (pxWidth, pxHeight), <span class="hljs-number">1</span>)
+    rasterize = ImageDraw.Draw(rasterPoly)
+    rasterize.polygon(pixels, <span class="hljs-number">0</span>)
+    mask = imageToArray(rasterPoly)
+
+    <span class="hljs-comment"># Clip the image using the mask</span>
+    clip = gdalnumeric.choose(mask, \
+        (clip, <span class="hljs-number">0</span>)).astype(gdalnumeric.uint8)
+
+    <span class="hljs-comment"># This image has 3 bands so we stretch each one to make them</span>
+    <span class="hljs-comment"># visually brighter</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
+      clip[i,:,:] = stretch(clip[i,:,:])
+
+    <span class="hljs-comment"># Save new tiff</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment">#  EDIT: instead of SaveArray, let&apos;s break all the</span>
+    <span class="hljs-comment">#  SaveArray steps out more explicity so</span>
+    <span class="hljs-comment">#  we can overwrite the offset of the destination</span>
+    <span class="hljs-comment">#  raster</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment">### the old way using SaveArray</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># gdalnumeric.SaveArray(clip, &quot;OUTPUT.tif&quot;, format=&quot;GTiff&quot;, prototype=raster_path)</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment">###</span>
+    <span class="hljs-comment">#</span>
+    gtiffDriver = gdal.GetDriverByName( <span class="hljs-string">&apos;GTiff&apos;</span> )
+    <span class="hljs-keyword">if</span> gtiffDriver <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Can&apos;t find GeoTiff Driver&quot;</span>)
+    gtiffDriver.CreateCopy( <span class="hljs-string">&quot;OUTPUT.tif&quot;</span>,
+        OpenArray( clip, prototype_ds=raster_path, xoff=xoffset, yoff=yoffset )
+    )
+
+    <span class="hljs-comment"># Save as an 8-bit jpeg for an easy, quick preview</span>
+    clip = clip.astype(gdalnumeric.uint8)
+    gdalnumeric.SaveArray(clip, <span class="hljs-string">&quot;OUTPUT.jpg&quot;</span>, format=<span class="hljs-string">&quot;JPEG&quot;</span>)
+
+    gdal.ErrorReset()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># example run : $ python clip.py /&lt;full-path&gt;/&lt;shapefile-name&gt;.shp /&lt;full-path&gt;/&lt;raster-name&gt;.tif</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-keyword">if</span> len( sys.argv ) &lt; <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;[ ERROR ] you must two args. 1) the full shapefile path and 2) the full raster path&quot;</span>
+        sys.exit( <span class="hljs-number">1</span> )
+
+    main( sys.argv[<span class="hljs-number">1</span>], sys.argv[<span class="hljs-number">2</span>] )
+</code></pre>
+<h2 id="&#x533A;&#x57DF;&#x7EDF;&#x8BA1;">&#x533A;&#x57DF;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> gdal, ogr, osr, numpy
+<span class="hljs-keyword">import</span> sys
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zonal_stats</span><span class="hljs-params">(feat, input_zone_polygon, input_value_raster)</span>:</span>
+
+    <span class="hljs-comment"># Open data</span>
+    raster = gdal.Open(input_value_raster)
+    shp = ogr.Open(input_zone_polygon)
+    lyr = shp.GetLayer()
+
+    <span class="hljs-comment"># Get raster georeference info</span>
+    transform = raster.GetGeoTransform()
+    xOrigin = transform[<span class="hljs-number">0</span>]
+    yOrigin = transform[<span class="hljs-number">3</span>]
+    pixelWidth = transform[<span class="hljs-number">1</span>]
+    pixelHeight = transform[<span class="hljs-number">5</span>]
+
+    <span class="hljs-comment"># Reproject vector geometry to same projection as raster</span>
+    sourceSR = lyr.GetSpatialRef()
+    targetSR = osr.SpatialReference()
+    targetSR.ImportFromWkt(raster.GetProjectionRef())
+    coordTrans = osr.CoordinateTransformation(sourceSR,targetSR)
+    feat = lyr.GetNextFeature()
+    geom = feat.GetGeometryRef()
+    geom.Transform(coordTrans)
+
+    <span class="hljs-comment"># Get extent of feat</span>
+    geom = feat.GetGeometryRef()
+    <span class="hljs-keyword">if</span> (geom.GetGeometryName() == <span class="hljs-string">&apos;MULTIPOLYGON&apos;</span>):
+        count = <span class="hljs-number">0</span>
+        pointsX = []; pointsY = []
+        <span class="hljs-keyword">for</span> polygon <span class="hljs-keyword">in</span> geom:
+            geomInner = geom.GetGeometryRef(count)
+            ring = geomInner.GetGeometryRef(<span class="hljs-number">0</span>)
+            numpoints = ring.GetPointCount()
+            <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> range(numpoints):
+                    lon, lat, z = ring.GetPoint(p)
+                    pointsX.append(lon)
+                    pointsY.append(lat)
+            count += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">elif</span> (geom.GetGeometryName() == <span class="hljs-string">&apos;POLYGON&apos;</span>):
+        ring = geom.GetGeometryRef(<span class="hljs-number">0</span>)
+        numpoints = ring.GetPointCount()
+        pointsX = []; pointsY = []
+        <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> range(numpoints):
+                lon, lat, z = ring.GetPoint(p)
+                pointsX.append(lon)
+                pointsY.append(lat)
+
+    <span class="hljs-keyword">else</span>:
+        sys.exit(<span class="hljs-string">&quot;ERROR: Geometry needs to be either Polygon or Multipolygon&quot;</span>)
+
+    xmin = min(pointsX)
+    xmax = max(pointsX)
+    ymin = min(pointsY)
+    ymax = max(pointsY)
+
+    <span class="hljs-comment"># Specify offset and rows and columns to read</span>
+    xoff = int((xmin - xOrigin)/pixelWidth)
+    yoff = int((yOrigin - ymax)/pixelWidth)
+    xcount = int((xmax - xmin)/pixelWidth)+<span class="hljs-number">1</span>
+    ycount = int((ymax - ymin)/pixelWidth)+<span class="hljs-number">1</span>
+
+    <span class="hljs-comment"># Create memory target raster</span>
+    target_ds = gdal.GetDriverByName(<span class="hljs-string">&apos;MEM&apos;</span>).Create(<span class="hljs-string">&apos;&apos;</span>, xcount, ycount, <span class="hljs-number">1</span>, gdal.GDT_Byte)
+    target_ds.SetGeoTransform((
+        xmin, pixelWidth, <span class="hljs-number">0</span>,
+        ymax, <span class="hljs-number">0</span>, pixelHeight,
+    ))
+
+    <span class="hljs-comment"># Create for target raster the same projection as for the value raster</span>
+    raster_srs = osr.SpatialReference()
+    raster_srs.ImportFromWkt(raster.GetProjectionRef())
+    target_ds.SetProjection(raster_srs.ExportToWkt())
+
+    <span class="hljs-comment"># Rasterize zone polygon to raster</span>
+    gdal.RasterizeLayer(target_ds, [<span class="hljs-number">1</span>], lyr, burn_values=[<span class="hljs-number">1</span>])
+
+    <span class="hljs-comment"># Read raster as arrays</span>
+    banddataraster = raster.GetRasterBand(<span class="hljs-number">1</span>)
+    dataraster = banddataraster.ReadAsArray(xoff, yoff, xcount, ycount).astype(numpy.float)
+
+    bandmask = target_ds.GetRasterBand(<span class="hljs-number">1</span>)
+    datamask = bandmask.ReadAsArray(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, xcount, ycount).astype(numpy.float)
+
+    <span class="hljs-comment"># Mask zone of raster</span>
+    zoneraster = numpy.ma.masked_array(dataraster,  numpy.logical_not(datamask))
+
+    <span class="hljs-comment"># Calculate statistics of zonal raster</span>
+    <span class="hljs-keyword">return</span> numpy.average(zoneraster),numpy.mean(zoneraster),numpy.median(zoneraster),numpy.std(zoneraster),numpy.var(zoneraster)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop_zonal_stats</span><span class="hljs-params">(input_zone_polygon, input_value_raster)</span>:</span>
+
+    shp = ogr.Open(input_zone_polygon)
+    lyr = shp.GetLayer()
+    featList = range(lyr.GetFeatureCount())
+    statDict = {}
+
+    <span class="hljs-keyword">for</span> FID <span class="hljs-keyword">in</span> featList:
+        feat = lyr.GetFeature(FID)
+        meanValue = zonal_stats(feat, input_zone_polygon, input_value_raster)
+        statDict[FID] = meanValue
+    <span class="hljs-keyword">return</span> statDict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(input_zone_polygon, input_value_raster)</span>:</span>
+    <span class="hljs-keyword">return</span> loop_zonal_stats(input_zone_polygon, input_value_raster)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># Returns for each feature a dictionary item (FID) with the statistical values in the following order: Average, Mean, Medain, Standard Deviation, Variance</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># example run : $ python grid.py &lt;full-path&gt;&lt;output-shapefile-name&gt;.shp xmin xmax ymin ymax gridHeight gridWidth</span>
+    <span class="hljs-comment">#</span>
+
+    <span class="hljs-keyword">if</span> len( sys.argv ) != <span class="hljs-number">3</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;[ ERROR ] you must supply two arguments: input-zone-shapefile-name.shp input-value-raster-name.tif &quot;</span>
+        sys.exit( <span class="hljs-number">1</span> )
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Returns for each feature a dictionary item (FID) with the statistical values in the following order: Average, Mean, Medain, Standard Deviation, Variance&apos;</span>
+    <span class="hljs-keyword">print</span> main( sys.argv[<span class="hljs-number">1</span>], sys.argv[<span class="hljs-number">2</span>] )
+</code></pre>
+<h2 id="&#x4ECE;&#x6570;&#x7EC4;&#x521B;&#x5EFA;&#x6805;&#x683C;">&#x4ECE;&#x6570;&#x7EC4;&#x521B;&#x5EFA;&#x6805;&#x683C;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> gdal, ogr, os, osr
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">array2raster</span><span class="hljs-params">(newRasterfn,rasterOrigin,pixelWidth,pixelHeight,array)</span>:</span>
+
+    cols = array.shape[<span class="hljs-number">1</span>]
+    rows = array.shape[<span class="hljs-number">0</span>]
+    originX = rasterOrigin[<span class="hljs-number">0</span>]
+    originY = rasterOrigin[<span class="hljs-number">1</span>]
+
+    driver = gdal.GetDriverByName(<span class="hljs-string">&apos;GTiff&apos;</span>)
+    outRaster = driver.Create(newRasterfn, cols, rows, <span class="hljs-number">1</span>, gdal.GDT_Byte)
+    outRaster.SetGeoTransform((originX, pixelWidth, <span class="hljs-number">0</span>, originY, <span class="hljs-number">0</span>, pixelHeight))
+    outband = outRaster.GetRasterBand(<span class="hljs-number">1</span>)
+    outband.WriteArray(array)
+    outRasterSRS = osr.SpatialReference()
+    outRasterSRS.ImportFromEPSG(<span class="hljs-number">4326</span>)
+    outRaster.SetProjection(outRasterSRS.ExportToWkt())
+    outband.FlushCache()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(newRasterfn,rasterOrigin,pixelWidth,pixelHeight,array)</span>:</span>
+    <span class="hljs-comment"># &#x53CD;&#x8F6C;&#x6570;&#x7EC4;</span>
+    reversed_arr = array[::<span class="hljs-number">-1</span>]
+    <span class="hljs-comment"># &#x6570;&#x7EC4;&#x8F6C;&#x6805;&#x683C;</span>
+    array2raster(newRasterfn,rasterOrigin,pixelWidth,pixelHeight,reversed_arr) 
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    rasterOrigin = (<span class="hljs-number">-123.25745</span>,<span class="hljs-number">45.43013</span>)
+    pixelWidth = <span class="hljs-number">10</span>
+    pixelHeight = <span class="hljs-number">10</span>
+    newRasterfn = <span class="hljs-string">&apos;test.tif&apos;</span>
+    array = np.array([[ <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                      [ <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]])
+
+
+    main(newRasterfn,rasterOrigin,pixelWidth,pixelHeight,array)
+</code></pre>
+<h2 id="&#x66FF;&#x6362;&#x65E0;&#x6548;&#x503C;">&#x66FF;&#x6362;&#x65E0;&#x6548;&#x503C;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> gdal, ogr, osr, os
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">raster2array</span><span class="hljs-params">(rasterfn)</span>:</span>
+    raster = gdal.Open(rasterfn)
+    band = raster.GetRasterBand(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">return</span> band.ReadAsArray()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getNoDataValue</span><span class="hljs-params">(rasterfn)</span>:</span>
+    raster = gdal.Open(rasterfn)
+    band = raster.GetRasterBand(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">return</span> band.GetNoDataValue()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">array2raster</span><span class="hljs-params">(rasterfn,newRasterfn,array)</span>:</span>
+    raster = gdal.Open(rasterfn)
+    geotransform = raster.GetGeoTransform()
+    originX = geotransform[<span class="hljs-number">0</span>]
+    originY = geotransform[<span class="hljs-number">3</span>]
+    pixelWidth = geotransform[<span class="hljs-number">1</span>]
+    pixelHeight = geotransform[<span class="hljs-number">5</span>]
+    cols = raster.RasterXSize
+    rows = raster.RasterYSize
+
+    driver = gdal.GetDriverByName(<span class="hljs-string">&apos;GTiff&apos;</span>)
+    outRaster = driver.Create(newRasterfn, cols, rows, <span class="hljs-number">1</span>, gdal.GDT_Float32)
+    outRaster.SetGeoTransform((originX, pixelWidth, <span class="hljs-number">0</span>, originY, <span class="hljs-number">0</span>, pixelHeight))
+    outband = outRaster.GetRasterBand(<span class="hljs-number">1</span>)
+    outband.WriteArray(array)
+    outRasterSRS = osr.SpatialReference()
+    outRasterSRS.ImportFromWkt(raster.GetProjectionRef())
+    outRaster.SetProjection(outRasterSRS.ExportToWkt())
+    outband.FlushCache()
+
+
+rasterfn = <span class="hljs-string">&apos;test.tif&apos;</span>
+newValue = <span class="hljs-number">0</span>
+newRasterfn = <span class="hljs-string">&apos;testNew.tif&apos;</span>
+
+<span class="hljs-comment"># &#x6805;&#x683C;&#x8F6C;&#x6570;&#x7EC4;</span>
+rasterArray = raster2array(rasterfn)
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x65E0;&#x6548;&#x503C;</span>
+noDataValue = getNoDataValue(rasterfn)
+
+<span class="hljs-comment"># &#x66F4;&#x65B0;&#x65E0;&#x6548;&#x503C;</span>
+rasterArray[rasterArray == noDataValue] = newValue
+
+<span class="hljs-comment"># &#x6570;&#x7EC4;&#x8F6C;&#x6805;&#x683C;</span>
+array2raster(rasterfn,newRasterfn,rasterArray)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3 矢量图层.html#面转点" class="navigation navigation-prev " aria-label="Previous page: 面转点">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4 栅格图层.html#关闭栅格数据" class="navigation navigation-next " aria-label="Next page: 关闭栅格数据">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4 栅格图层","level":"1.5","depth":1,"next":{"title":"关闭栅格数据","level":"1.5.1","depth":2,"anchor":"#关闭栅格数据","path":"gitbook/4 栅格图层.md","ref":"gitbook/4 栅格图层.md#关闭栅格数据","articles":[]},"previous":{"title":"面转点","level":"1.4.31","depth":2,"anchor":"#面转点","path":"gitbook/3 矢量图层.md","ref":"gitbook/3 矢量图层.md#面转点","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","chapter-fold","github","splitter","code","back-to-top-button","hide-element","donate","auto-scroll-table","lightbox","custom-favicon","pageview-count","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/luolingchun/py-gdalogr-cookbook-zh"},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://raw.githubusercontent.com/luolingchun/luolingchun.github.io/master/gitbook/images/wechat.jpg","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"./gitbook/images/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"llc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GDAL/OGR 中文手册","language":"zh-hans","gitbook":"*","description":"GDAL/OGR 中文手册"},"file":{"path":"gitbook/4 栅格图层.md","mtime":"2020-03-10T03:35:34.090Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T03:36:11.119Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook.js"></script>
+    <script src="theme.js"></script>
+    
+        
+        <script src="gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
