@@ -1,0 +1,74 @@
+site_name: python GDAL/OGR 中文手册
+site_url: https://luolingchun.github.io/py-gdalogr-cookbook-zh
+site_description: 本项目是翻译项目，英文项目地址：https://github.com/pcjericks/py-gdalogr-cookbook
+site_author: llc
+
+repo_url: https://github.com/luolingchun/py-gdalogr-cookbook-zh
+repo_name: 'GitHub'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.snippets
+
+
+theme:
+  name: material
+  language: 'zh'
+  logo: images/logo.svg
+  favicon: images/logo-blue.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light
+  features:
+    - navigation.tracking
+    - navigation.top
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/img.css
+
+nav:
+  - 主页: index.md
+  - 一般使用: 一般使用.md
+  - 几何: 几何.md
+  - 矢量图层: 矢量图层.md
+  - 栅格图层: 栅格图层.md
+  - 投影: 投影.md
+
