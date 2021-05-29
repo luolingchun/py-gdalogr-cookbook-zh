@@ -1,0 +1,8 @@
+p img {
+    box-shadow: 0 0 10px #333743f0;
+}
+
+.md-header {
+    background-image: linear-gradient(to right, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);
+    opacity: 0.9;
+}
