@@ -1,0 +1,1381 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="本项目是翻译项目，英文项目地址：https://github.com/pcjericks/py-gdalogr-cookbook">
+      
+      
+        <meta name="author" content="llc">
+      
+      
+        <link rel="canonical" href="https://luolingchun.github.io/py-gdalogr-cookbook-zh/%E5%87%A0%E4%BD%95/">
+      
+      <link rel="icon" href="../images/logo-blue.svg">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>几何 - python GDAL/OGR 中文手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/img.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="python GDAL/OGR 中文手册" class="md-header__button md-logo" aria-label="python GDAL/OGR 中文手册" data-md-component="logo">
+      
+  <img src="../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            python GDAL/OGR 中文手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              几何
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="黑"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="黑" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="亮"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="亮" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/luolingchun/py-gdalogr-cookbook-zh" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="python GDAL/OGR 中文手册" class="md-nav__button md-logo" aria-label="python GDAL/OGR 中文手册" data-md-component="logo">
+      
+  <img src="../images/logo.svg" alt="logo">
+
+    </a>
+    python GDAL/OGR 中文手册
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/luolingchun/py-gdalogr-cookbook-zh" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%80%E8%88%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        一般使用
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          几何
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        几何
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    创建线
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    创建多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    创建带洞的多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    创建多部件点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    创建多部件线
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    创建多部件多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建几何集合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkt" class="md-nav__link">
+    从WKT创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    从GeoJSON创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gml" class="md-nav__link">
+    从GML创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkb" class="md-nav__link">
+    从WKB创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    计算点的个数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    计算几何个数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    迭代几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    迭代点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    几何缓冲区
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    计算包围盒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    计算面积
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    计算长度
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    获得几何类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    计算几何相交
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    计算几何并集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geojson_1" class="md-nav__link">
+    输出几何到GeoJSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkt_1" class="md-nav__link">
+    输出几何到WKT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kml" class="md-nav__link">
+    输出几何到KML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkb_1" class="md-nav__link">
+    输出几何到WKB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    强制多边形到多部件多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    四等分多边形并创建质心
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%B1%82/" class="md-nav__link">
+        矢量图层
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A0%85%E6%A0%BC%E5%9B%BE%E5%B1%82/" class="md-nav__link">
+        栅格图层
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8A%95%E5%BD%B1/" class="md-nav__link">
+        投影
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    创建线
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    创建多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    创建带洞的多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    创建多部件点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    创建多部件线
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    创建多部件多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    创建几何集合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkt" class="md-nav__link">
+    从WKT创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geojson" class="md-nav__link">
+    从GeoJSON创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gml" class="md-nav__link">
+    从GML创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkb" class="md-nav__link">
+    从WKB创建几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    计算点的个数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    计算几何个数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    迭代几何
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    迭代点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    几何缓冲区
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    计算包围盒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    计算面积
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    计算长度
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    获得几何类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    计算几何相交
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    计算几何并集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geojson_1" class="md-nav__link">
+    输出几何到GeoJSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkt_1" class="md-nav__link">
+    输出几何到WKT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kml" class="md-nav__link">
+    输出几何到KML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wkb_1" class="md-nav__link">
+    输出几何到WKB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    强制多边形到多部件多边形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    四等分多边形并创建质心
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/luolingchun/py-gdalogr-cookbook-zh/edit/master/docs/几何.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="_1">几何<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">创建点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">point</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1198054.34</span><span class="p">,</span> <span class="mf">648493.09</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_3">创建线<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLineString</span><span class="p">)</span>
+<span class="n">line</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1116651.439379124</span><span class="p">,</span> <span class="mf">637392.6969887456</span><span class="p">)</span>
+<span class="n">line</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1188804.0108498496</span><span class="p">,</span> <span class="mf">652655.7409537067</span><span class="p">)</span>
+<span class="n">line</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1226730.3625203592</span><span class="p">,</span> <span class="mf">634155.0816022386</span><span class="p">)</span>
+<span class="n">line</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1281307.30760719</span><span class="p">,</span> <span class="mf">636467.6640211721</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_4">创建多边形<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建环</span>
+<span class="n">ring</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1161053.0218226474</span><span class="p">,</span> <span class="mf">667456.2684348812</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214704.933941905</span><span class="p">,</span> <span class="mf">641092.8288590391</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1228580.428455506</span><span class="p">,</span> <span class="mf">682719.3123998424</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1218405.0658121984</span><span class="p">,</span> <span class="mf">721108.1805541387</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+
+<span class="c1"># 创建多边形</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">poly</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_5">创建带洞的多边形<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建内环</span>
+<span class="n">outRing</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">outRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1154115.274565847</span><span class="p">,</span> <span class="mf">686419.4442701361</span><span class="p">)</span>
+<span class="n">outRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1154115.274565847</span><span class="p">,</span> <span class="mf">653118.2574374934</span><span class="p">)</span>
+<span class="n">outRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1165678.1866605144</span><span class="p">,</span> <span class="mf">653118.2574374934</span><span class="p">)</span>
+<span class="n">outRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1165678.1866605144</span><span class="p">,</span> <span class="mf">686419.4442701361</span><span class="p">)</span>
+<span class="n">outRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1154115.274565847</span><span class="p">,</span> <span class="mf">686419.4442701361</span><span class="p">)</span>
+
+<span class="c1"># 创建外环</span>
+<span class="n">innerRing</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">innerRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1149490.1097279799</span><span class="p">,</span> <span class="mf">691044.6091080031</span><span class="p">)</span>
+<span class="n">innerRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1149490.1097279799</span><span class="p">,</span> <span class="mf">648030.5761158396</span><span class="p">)</span>
+<span class="n">innerRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1191579.1097525698</span><span class="p">,</span> <span class="mf">648030.5761158396</span><span class="p">)</span>
+<span class="n">innerRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1191579.1097525698</span><span class="p">,</span> <span class="mf">691044.6091080031</span><span class="p">)</span>
+<span class="n">innerRing</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1149490.1097279799</span><span class="p">,</span> <span class="mf">691044.6091080031</span><span class="p">)</span>
+
+<span class="c1"># 创建多边形</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">outRing</span><span class="p">)</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">innerRing</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">poly</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_6">创建多部件点<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">multipoint</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbMultiPoint</span><span class="p">)</span>
+
+<span class="n">point1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">point1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1251243.7361610543</span><span class="p">,</span> <span class="mf">598078.7958668759</span><span class="p">)</span>
+<span class="n">multipoint</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">point1</span><span class="p">)</span>
+
+<span class="n">point2</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">point2</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1240605.8570339603</span><span class="p">,</span> <span class="mf">601778.9277371694</span><span class="p">)</span>
+<span class="n">multipoint</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">point2</span><span class="p">)</span>
+
+<span class="n">point3</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">point3</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1250318.7031934808</span><span class="p">,</span> <span class="mf">606404.0925750365</span><span class="p">)</span>
+<span class="n">multipoint</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">point3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multipoint</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_7">创建多部件线<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">multiline</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbMultiLineString</span><span class="p">)</span>
+
+<span class="n">line1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLineString</span><span class="p">)</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214242.4174581182</span><span class="p">,</span> <span class="mf">617041.9717021306</span><span class="p">)</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1234593.142744733</span><span class="p">,</span> <span class="mf">629529.9167643716</span><span class="p">)</span>
+<span class="n">multiline</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+
+<span class="n">line1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLineString</span><span class="p">)</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1184641.3624957693</span><span class="p">,</span> <span class="mf">626754.8178616514</span><span class="p">)</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1219792.6152635587</span><span class="p">,</span> <span class="mf">606866.6090588232</span><span class="p">)</span>
+<span class="n">multiline</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multiline</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_8">创建多部件多边形<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">multipolygon</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbMultiPolygon</span><span class="p">)</span>
+
+<span class="c1"># 创建环 #1</span>
+<span class="n">ring1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1204067.0548148106</span><span class="p">,</span> <span class="mf">634617.5980860253</span><span class="p">)</span>
+<span class="n">ring1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1204067.0548148106</span><span class="p">,</span> <span class="mf">620742.1035724243</span><span class="p">)</span>
+<span class="n">ring1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1215167.4504256917</span><span class="p">,</span> <span class="mf">620742.1035724243</span><span class="p">)</span>
+<span class="n">ring1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1215167.4504256917</span><span class="p">,</span> <span class="mf">634617.5980860253</span><span class="p">)</span>
+<span class="n">ring1</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1204067.0548148106</span><span class="p">,</span> <span class="mf">634617.5980860253</span><span class="p">)</span>
+
+<span class="c1"># 创建多边形 #1</span>
+<span class="n">poly1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">poly1</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring1</span><span class="p">)</span>
+<span class="n">multipolygon</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">poly1</span><span class="p">)</span>
+
+<span class="c1"># 创建环 #2</span>
+<span class="n">ring2</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring2</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179553.6811741155</span><span class="p">,</span> <span class="mf">647105.5431482664</span><span class="p">)</span>
+<span class="n">ring2</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179553.6811741155</span><span class="p">,</span> <span class="mf">626292.3013778647</span><span class="p">)</span>
+<span class="n">ring2</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1194354.20865529</span><span class="p">,</span> <span class="mf">626292.3013778647</span><span class="p">)</span>
+<span class="n">ring2</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1194354.20865529</span><span class="p">,</span> <span class="mf">647105.5431482664</span><span class="p">)</span>
+<span class="n">ring2</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179553.6811741155</span><span class="p">,</span> <span class="mf">647105.5431482664</span><span class="p">)</span>
+
+<span class="c1"># 创建多边形 #2</span>
+<span class="n">poly2</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">poly2</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring2</span><span class="p">)</span>
+<span class="n">multipolygon</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">poly2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multipolygon</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_9">创建几何集合<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建几何集合</span>
+<span class="n">geomcol</span> <span class="o">=</span>  <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbGeometryCollection</span><span class="p">)</span>
+
+<span class="c1"># 添加点</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">point</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="o">-</span><span class="mf">122.23</span><span class="p">,</span> <span class="mf">47.09</span><span class="p">)</span>
+<span class="n">geomcol</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+
+<span class="c1"># 添加线</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLineString</span><span class="p">)</span>
+<span class="n">line</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="o">-</span><span class="mf">122.60</span><span class="p">,</span> <span class="mf">47.14</span><span class="p">)</span>
+<span class="n">line</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="o">-</span><span class="mf">122.48</span><span class="p">,</span> <span class="mf">47.23</span><span class="p">)</span>
+<span class="n">geomcol</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">geomcol</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="wkt">从WKT创建几何<a class="headerlink" href="#wkt" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;POINT (1120351.5712494177 741921.4223245403)&quot;</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">GetX</span><span class="p">(),</span> <span class="n">point</span><span class="o">.</span><span class="n">GetY</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="geojson">从GeoJSON创建几何<a class="headerlink" href="#geojson" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">geojson</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[108420.33,753808.59]}&quot;&quot;&quot;</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromJson</span><span class="p">(</span><span class="n">geojson</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">GetX</span><span class="p">(),</span> <span class="n">point</span><span class="o">.</span><span class="n">GetY</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="gml">从GML创建几何<a class="headerlink" href="#gml" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">gml</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;gml:Point xmlns:gml=&quot;http://www.opengis.net/gml&quot;&gt;&lt;gml:coordinates&gt;108420.33,753808.59&lt;/gml:coordinates&gt;&lt;/gml:Point&gt;&quot;&quot;&quot;</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromGML</span><span class="p">(</span><span class="n">gml</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">GetX</span><span class="p">(),</span> <span class="n">point</span><span class="o">.</span><span class="n">GetY</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="wkb">从WKB创建几何<a class="headerlink" href="#wkb" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64decode</span>
+
+<span class="n">wkb</span> <span class="o">=</span> <span class="n">b64decode</span><span class="p">(</span><span class="s2">&quot;AIAAAAFBMkfmVwo9cUEjylouFHrhAAAAAAAAAAA=&quot;</span><span class="p">)</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkb</span><span class="p">(</span><span class="n">wkb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">,</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">GetX</span><span class="p">(),</span> <span class="n">point</span><span class="o">.</span><span class="n">GetY</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="_10">计算点的个数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;LINESTRING (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Geometry has </span><span class="si">%i</span><span class="s2"> points&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">GetPointCount</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="_11">计算几何个数<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;MULTIPOINT (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Geometry has </span><span class="si">%i</span><span class="s2"> geometries&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">GetGeometryCount</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="_12">迭代几何<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;MULTIPOINT (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">geom</span><span class="o">.</span><span class="n">GetGeometryCount</span><span class="p">()):</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">GetGeometryRef</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">). </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">g</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="_13">迭代点<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;LINESTRING (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">geom</span><span class="o">.</span><span class="n">GetPointCount</span><span class="p">()):</span>
+    <span class="c1"># GetPoint 返回一个元俄日不是一个Geometry</span>
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">GetPoint</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">). POINT (</span><span class="si">%d</span><span class="s2"> </span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+<h2 id="_14">几何缓冲区<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;POINT (1198054.34 648493.09)&quot;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="n">bufferDistance</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">Buffer</span><span class="p">(</span><span class="n">bufferDistance</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> buffered by </span><span class="si">%d</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">(),</span> <span class="n">bufferDistance</span><span class="p">,</span> <span class="n">poly</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()))</span>
+</code></pre></div>
+<h2 id="_15">计算包围盒<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;LINESTRING (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="c1"># GetEnvelope 饭hi一个元组 (minX, maxX, minY, maxY)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">GetEnvelope</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;minX: </span><span class="si">%d</span><span class="s2">, minY: </span><span class="si">%d</span><span class="s2">, maxX: </span><span class="si">%d</span><span class="s2">, maxY: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">env</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">env</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">env</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">env</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+</code></pre></div>
+<h2 id="_16">计算面积<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;POLYGON ((1162440.5712740074 672081.4332727483, 1162440.5712740074 647105.5431482664, 1195279.2416228633 647105.5431482664, 1195279.2416228633 672081.4332727483, 1162440.5712740074 672081.4332727483))&quot;</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">poly</span><span class="o">.</span><span class="n">GetArea</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_17">计算长度<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt</span> <span class="o">=</span> <span class="s2">&quot;LINESTRING (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Length = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">geom</span><span class="o">.</span><span class="n">Length</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_18">获得几何类型<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;POINT (1198054.34 648493.09)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LINESTRING (1181866.263593049 615654.4222507705, 1205917.1207499576 623979.7189589312, 1227192.8790041457 643405.4112779726, 1224880.2965852122 665143.6860159477)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;POLYGON ((1162440.5712740074 672081.4332727483, 1162440.5712740074 647105.5431482664, 1195279.2416228633 647105.5431482664, 1195279.2416228633 672081.4332727483, 1162440.5712740074 672081.4332727483))&quot;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">wkt</span> <span class="ow">in</span> <span class="n">wkts</span><span class="p">:</span>
+    <span class="n">geom</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">GetGeometryName</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_19">计算几何相交<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt1</span> <span class="o">=</span> <span class="s2">&quot;POLYGON ((1208064.271243039 624154.6783778917, 1208064.271243039 601260.9785661874, 1231345.9998651114 601260.9785661874, 1231345.9998651114 624154.6783778917, 1208064.271243039 624154.6783778917))&quot;</span>
+<span class="n">wkt2</span> <span class="o">=</span> <span class="s2">&quot;POLYGON ((1199915.6662253144 633079.3410163528, 1199915.6662253144 614453.958118695, 1219317.1067437078 614453.958118695, 1219317.1067437078 633079.3410163528, 1199915.6662253144 633079.3410163528)))&quot;</span>
+
+<span class="n">poly1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt1</span><span class="p">)</span>
+<span class="n">poly2</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt2</span><span class="p">)</span>
+
+<span class="n">intersection</span> <span class="o">=</span> <span class="n">poly1</span><span class="o">.</span><span class="n">Intersection</span><span class="p">(</span><span class="n">poly2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">intersection</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="_20">计算几何并集<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="n">wkt1</span> <span class="o">=</span> <span class="s2">&quot;POLYGON ((1208064.271243039 624154.6783778917, 1208064.271243039 601260.9785661874, 1231345.9998651114 601260.9785661874, 1231345.9998651114 624154.6783778917, 1208064.271243039 624154.6783778917))&quot;</span>
+<span class="n">wkt2</span> <span class="o">=</span> <span class="s2">&quot;POLYGON ((1199915.6662253144 633079.3410163528, 1199915.6662253144 614453.958118695, 1219317.1067437078 614453.958118695, 1219317.1067437078 633079.3410163528, 1199915.6662253144 633079.3410163528)))&quot;</span>
+
+<span class="n">poly1</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt1</span><span class="p">)</span>
+<span class="n">poly2</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">wkt2</span><span class="p">)</span>
+
+<span class="n">union</span> <span class="o">=</span> <span class="n">poly1</span><span class="o">.</span><span class="n">Union</span><span class="p">(</span><span class="n">poly2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">poly1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">poly2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">union</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="geojson_1">输出几何到GeoJSON<a class="headerlink" href="#geojson_1" title="Permanent link">&para;</a></h2>
+<p>有两个选项可从几何图形创建GeoJSON。</p>
+<p>你可以创建一个新的GeoJSON文件，也可以直接将几何图形导出到Json并进行打印，这两个选项将在下面说明。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建测试多边形</span>
+<span class="n">ring</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1161053.0218226474</span><span class="p">,</span> <span class="mf">667456.2684348812</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214704.933941905</span><span class="p">,</span> <span class="mf">641092.8288590391</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1228580.428455506</span><span class="p">,</span> <span class="mf">682719.3123998424</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1218405.0658121984</span><span class="p">,</span> <span class="mf">721108.1805541387</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+
+<span class="c1"># 创建输出驱动</span>
+<span class="n">outDriver</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GeoJSON&#39;</span><span class="p">)</span>
+
+<span class="c1"># 创建输出GeoJSON</span>
+<span class="n">outDataSource</span> <span class="o">=</span> <span class="n">outDriver</span><span class="o">.</span><span class="n">CreateDataSource</span><span class="p">(</span><span class="s1">&#39;test.geojson&#39;</span><span class="p">)</span>
+<span class="n">outLayer</span> <span class="o">=</span> <span class="n">outDataSource</span><span class="o">.</span><span class="n">CreateLayer</span><span class="p">(</span><span class="s1">&#39;test.geojson&#39;</span><span class="p">,</span> <span class="n">geom_type</span><span class="o">=</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span> <span class="p">)</span>
+
+<span class="c1"># 创建要素定义</span>
+<span class="n">featureDefn</span> <span class="o">=</span> <span class="n">outLayer</span><span class="o">.</span><span class="n">GetLayerDefn</span><span class="p">()</span>
+
+<span class="c1"># 创建新要素</span>
+<span class="n">outFeature</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span><span class="n">featureDefn</span><span class="p">)</span>
+
+<span class="c1"># 设置新几何</span>
+<span class="n">outFeature</span><span class="o">.</span><span class="n">SetGeometry</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+
+<span class="c1"># 添加要素到图层</span>
+<span class="n">outLayer</span><span class="o">.</span><span class="n">CreateFeature</span><span class="p">(</span><span class="n">outFeature</span><span class="p">)</span>
+
+<span class="c1"># 释放要素</span>
+<span class="n">outFeature</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># 保存关闭数据源</span>
+<span class="n">outDataSource</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建测试多边形</span>
+<span class="n">ring</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1161053.0218226474</span><span class="p">,</span> <span class="mf">667456.2684348812</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214704.933941905</span><span class="p">,</span> <span class="mf">641092.8288590391</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1228580.428455506</span><span class="p">,</span> <span class="mf">682719.3123998424</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1218405.0658121984</span><span class="p">,</span> <span class="mf">721108.1805541387</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+
+<span class="n">geojson</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">ExportToJson</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">geojson</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="wkt_1">输出几何到WKT<a class="headerlink" href="#wkt_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建测试几何</span>
+<span class="n">ring</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1161053.0218226474</span><span class="p">,</span> <span class="mf">667456.2684348812</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214704.933941905</span><span class="p">,</span> <span class="mf">641092.8288590391</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1228580.428455506</span><span class="p">,</span> <span class="mf">682719.3123998424</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1218405.0658121984</span><span class="p">,</span> <span class="mf">721108.1805541387</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">geom_poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">geom_poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+
+<span class="c1"># 输出几何到WKT</span>
+<span class="n">wkt</span> <span class="o">=</span> <span class="n">geom_poly</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="kml">输出几何到KML<a class="headerlink" href="#kml" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建测试几何</span>
+<span class="n">ring</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1161053.0218226474</span><span class="p">,</span> <span class="mf">667456.2684348812</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214704.933941905</span><span class="p">,</span> <span class="mf">641092.8288590391</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1228580.428455506</span><span class="p">,</span> <span class="mf">682719.3123998424</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1218405.0658121984</span><span class="p">,</span> <span class="mf">721108.1805541387</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">geom_poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">geom_poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+
+<span class="n">kml</span> <span class="o">=</span> <span class="n">geom_poly</span><span class="o">.</span><span class="n">ExportToKML</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kml</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="wkb_1">输出几何到WKB<a class="headerlink" href="#wkb_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建测试几何</span>
+<span class="n">ring</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1161053.0218226474</span><span class="p">,</span> <span class="mf">667456.2684348812</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1214704.933941905</span><span class="p">,</span> <span class="mf">641092.8288590391</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1228580.428455506</span><span class="p">,</span> <span class="mf">682719.3123998424</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1218405.0658121984</span><span class="p">,</span> <span class="mf">721108.1805541387</span><span class="p">)</span>
+<span class="n">ring</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mf">1179091.1646903288</span><span class="p">,</span> <span class="mf">712782.8838459781</span><span class="p">)</span>
+<span class="n">geom_poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">geom_poly</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+
+<span class="c1"># 输出几何到WKB</span>
+<span class="n">wkb</span> <span class="o">=</span> <span class="n">geom_poly</span><span class="o">.</span><span class="n">ExportToWkb</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wkb</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_21">强制多边形到多部件多边形<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建测试几何</span>
+<span class="n">poly_wkt</span><span class="o">=</span> <span class="s2">&quot;POLYGON ((1179091.164690328761935 712782.883845978067257,1161053.021822647424415 667456.268434881232679,1214704.933941904921085 641092.828859039116651,1228580.428455505985767 682719.312399842427112,1218405.065812198445201 721108.180554138729349,1179091.164690328761935 712782.883845978067257))&quot;</span>
+<span class="n">geom_poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">poly_wkt</span><span class="p">)</span>
+
+<span class="c1"># 强制多边形到多部件多边形</span>
+<span class="k">if</span> <span class="n">geom_poly</span><span class="o">.</span><span class="n">GetGeometryType</span><span class="p">()</span> <span class="o">==</span> <span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">:</span>
+   <span class="n">geom_poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">ForceToMultiPolygon</span><span class="p">(</span><span class="n">geom_poly</span><span class="p">)</span>
+   <span class="c1"># 如果迭代要素只是为了更新几何(geometry)，可以使用feature.SetGeometryDirectly(geom_poly)</span>
+
+<span class="c1"># 输出几何到WKT</span>
+<span class="n">wkt</span> <span class="o">=</span> <span class="n">geom_poly</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wkt</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_22">四等分多边形并创建质心<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+
+<span class="c1"># 创建多边形</span>
+<span class="n">poly_Wkt</span><span class="o">=</span> <span class="s2">&quot;POLYGON((-107.42631019589980212 40.11971708125970082,-107.42455436683293613 40.12061219666851741,-107.42020981542387403 40.12004414402532859,-107.41789122063043749 40.12149008687303819,-107.41419947746419439 40.11811617239460048,-107.41915181585792993 40.11761695654455906,-107.41998470913324581 40.11894245264452508,-107.42203317637793702 40.1184088144647788,-107.42430674991324224 40.1174448122981957,-107.42430674991324224 40.1174448122981957,-107.42631019589980212 40.11971708125970082))&quot;</span>
+<span class="n">geom_poly</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkt</span><span class="p">(</span><span class="n">poly_Wkt</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="quarter1" src="../assets/quarter1.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create 4 square polygons</span>
+<span class="n">geom_poly_envelope</span> <span class="o">=</span> <span class="n">geom_poly</span><span class="o">.</span><span class="n">GetEnvelope</span><span class="p">()</span>
+<span class="n">minX</span> <span class="o">=</span> <span class="n">geom_poly_envelope</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">minY</span> <span class="o">=</span> <span class="n">geom_poly_envelope</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">maxX</span> <span class="o">=</span> <span class="n">geom_poly_envelope</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">maxY</span> <span class="o">=</span> <span class="n">geom_poly_envelope</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">coord0----coord1----coord2</span>
+<span class="sd">|           |           |</span>
+<span class="sd">coord3----coord4----coord5</span>
+<span class="sd">|           |           |</span>
+<span class="sd">coord6----coord7----coord8</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">coord0</span> <span class="o">=</span> <span class="n">minX</span><span class="p">,</span> <span class="n">maxY</span>
+<span class="n">coord1</span> <span class="o">=</span> <span class="n">minX</span><span class="o">+</span><span class="p">(</span><span class="n">maxX</span><span class="o">-</span><span class="n">minX</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">maxY</span>
+<span class="n">coord2</span> <span class="o">=</span> <span class="n">maxX</span><span class="p">,</span> <span class="n">maxY</span>
+<span class="n">coord3</span> <span class="o">=</span> <span class="n">minX</span><span class="p">,</span> <span class="n">minY</span><span class="o">+</span><span class="p">(</span><span class="n">maxY</span><span class="o">-</span><span class="n">minY</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">coord4</span> <span class="o">=</span> <span class="n">minX</span><span class="o">+</span><span class="p">(</span><span class="n">maxX</span><span class="o">-</span><span class="n">minX</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">minY</span><span class="o">+</span><span class="p">(</span><span class="n">maxY</span><span class="o">-</span><span class="n">minY</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">coord5</span> <span class="o">=</span> <span class="n">maxX</span><span class="p">,</span> <span class="n">minY</span><span class="o">+</span><span class="p">(</span><span class="n">maxY</span><span class="o">-</span><span class="n">minY</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">coord6</span> <span class="o">=</span> <span class="n">minX</span><span class="p">,</span> <span class="n">minY</span>
+<span class="n">coord7</span> <span class="o">=</span> <span class="n">minX</span><span class="o">+</span><span class="p">(</span><span class="n">maxX</span><span class="o">-</span><span class="n">minX</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">minY</span>
+<span class="n">coord8</span> <span class="o">=</span> <span class="n">maxX</span><span class="p">,</span> <span class="n">minY</span>
+
+<span class="n">ringTopLeft</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ringTopLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord0</span><span class="p">)</span>
+<span class="n">ringTopLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord1</span><span class="p">)</span>
+<span class="n">ringTopLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord4</span><span class="p">)</span>
+<span class="n">ringTopLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord3</span><span class="p">)</span>
+<span class="n">ringTopLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord0</span><span class="p">)</span>
+<span class="n">polyTopLeft</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">polyTopLeft</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ringTopLeft</span><span class="p">)</span>
+
+
+<span class="n">ringTopRight</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ringTopRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord1</span><span class="p">)</span>
+<span class="n">ringTopRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord2</span><span class="p">)</span>
+<span class="n">ringTopRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord5</span><span class="p">)</span>
+<span class="n">ringTopRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord4</span><span class="p">)</span>
+<span class="n">ringTopRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord1</span><span class="p">)</span>
+<span class="n">polyTopRight</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">polyTopRight</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ringTopRight</span><span class="p">)</span>
+
+
+<span class="n">ringBottomLeft</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ringBottomLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord3</span><span class="p">)</span>
+<span class="n">ringBottomLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord4</span><span class="p">)</span>
+<span class="n">ringBottomLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord7</span><span class="p">)</span>
+<span class="n">ringBottomLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord6</span><span class="p">)</span>
+<span class="n">ringBottomLeft</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord3</span><span class="p">)</span>
+<span class="n">polyBottomLeft</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">polyBottomLeft</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ringBottomLeft</span><span class="p">)</span>
+
+
+<span class="n">ringBottomRight</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbLinearRing</span><span class="p">)</span>
+<span class="n">ringBottomRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord4</span><span class="p">)</span>
+<span class="n">ringBottomRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord5</span><span class="p">)</span>
+<span class="n">ringBottomRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord8</span><span class="p">)</span>
+<span class="n">ringBottomRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord7</span><span class="p">)</span>
+<span class="n">ringBottomRight</span><span class="o">.</span><span class="n">AddPoint_2D</span><span class="p">(</span><span class="o">*</span><span class="n">coord4</span><span class="p">)</span>
+<span class="n">polyBottomRight</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPolygon</span><span class="p">)</span>
+<span class="n">polyBottomRight</span><span class="o">.</span><span class="n">AddGeometry</span><span class="p">(</span><span class="n">ringBottomRight</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="quarter4" src="../assets/quarter4.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 对四个方格多边形求交</span>
+<span class="n">quaterPolyTopLeft</span> <span class="o">=</span> <span class="n">polyTopLeft</span><span class="o">.</span><span class="n">Intersection</span><span class="p">(</span><span class="n">geom_poly</span><span class="p">)</span>
+<span class="n">quaterPolyTopRight</span> <span class="o">=</span>  <span class="n">polyTopRight</span><span class="o">.</span><span class="n">Intersection</span><span class="p">(</span><span class="n">geom_poly</span><span class="p">)</span>
+<span class="n">quaterPolyBottomLeft</span> <span class="o">=</span>  <span class="n">polyBottomLeft</span><span class="o">.</span><span class="n">Intersection</span><span class="p">(</span><span class="n">geom_poly</span><span class="p">)</span>
+<span class="n">quaterPolyBottomRight</span> <span class="o">=</span>  <span class="n">polyBottomRight</span><span class="o">.</span><span class="n">Intersection</span><span class="p">(</span><span class="n">geom_poly</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="_images/quarter6.png" src="../assets/quarter6.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建质心</span>
+<span class="n">centroidTopLeft</span> <span class="o">=</span> <span class="n">quaterPolyTopLeft</span><span class="o">.</span><span class="n">Centroid</span><span class="p">()</span>
+<span class="n">centroidTopRight</span> <span class="o">=</span>  <span class="n">quaterPolyTopRight</span><span class="o">.</span><span class="n">Centroid</span><span class="p">()</span>
+<span class="n">centroidBottomLeft</span> <span class="o">=</span>  <span class="n">quaterPolyBottomLeft</span><span class="o">.</span><span class="n">Centroid</span><span class="p">()</span>
+<span class="n">centroidBottomRight</span> <span class="o">=</span>  <span class="n">quaterPolyBottomRight</span><span class="o">.</span><span class="n">Centroid</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="_images/quarter9.png" src="../assets/quarter9.png" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../%E4%B8%80%E8%88%AC%E4%BD%BF%E7%94%A8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 一般使用" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              一般使用
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%B1%82/" class="md-footer__link md-footer__link--next" aria-label="下一页: 矢量图层" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              矢量图层
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.top", "navigation.expand", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

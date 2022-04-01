@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://luolingchun.github.io/py-gdalogr-cookbook-zh/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://luolingchun.github.io/py-gdalogr-cookbook-zh/%E4%B8%80%E8%88%AC%E4%BD%BF%E7%94%A8/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://luolingchun.github.io/py-gdalogr-cookbook-zh/%E5%87%A0%E4%BD%95/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://luolingchun.github.io/py-gdalogr-cookbook-zh/%E6%8A%95%E5%BD%B1/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://luolingchun.github.io/py-gdalogr-cookbook-zh/%E6%A0%85%E6%A0%BC%E5%9B%BE%E5%B1%82/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://luolingchun.github.io/py-gdalogr-cookbook-zh/%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%B1%82/</loc>
+         <lastmod>2022-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
